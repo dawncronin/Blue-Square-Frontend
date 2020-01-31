@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import Home from "./containers/home";
+import Signup from "./components/signup"
+import Login from "./components/login"
+import {getCurrentUser} from "./actions/userActions"
+import {connect} from 'react-redux'
+import Navbar from './components/navbar'
 
-function App() {
+
+
+
+
+class App extends Component {
+
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+    if (token) {
+     this.props.getCurrentUser()
+    }
+  }
+
+
+
+render() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className="app">
+      <Navbar />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/login"  component={Login}/>
+      <Route exact path="/signup" component={Signup}/>
     </div>
+  </Router>
   );
+
+}}
+
+function mapDispatchToProps(dispatch){
+  return { getCurrentUser: () => dispatch(getCurrentUser()) }
+}
+ 
+function mapStateToProps(state){
+  return {currentUser: state.currentUser}
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps) (App) 
