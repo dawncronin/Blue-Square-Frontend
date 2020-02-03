@@ -10,6 +10,11 @@ import Login from "./components/login"
 import {getCurrentUser} from "./actions/userActions"
 import {connect} from 'react-redux'
 import Navbar from './components/navbar'
+import Resorts from "./containers/resorts"
+import WannaGo from "./containers/wannaGo"
+import PastTrips from "./containers/pastTrips"
+
+
 
 
 
@@ -36,6 +41,9 @@ render() {
       <Route exact path="/" component={Home} />
       <Route exact path="/login"  component={Login}/>
       <Route exact path="/signup" component={Signup}/>
+      <Route exact path="/resorts" component={Resorts}/>
+      <Route exact path="/wannago" component={WannaGo}/>
+      <Route exact path="/pasttrips" component={PastTrips}/>
     </div>
   </Router>
   );

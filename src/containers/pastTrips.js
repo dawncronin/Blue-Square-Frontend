@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 
 
-function PastVisits(props) {
+function PastTrips(props) {
 
     return (
         <div></div>
@@ -14,4 +14,4 @@ function mapStateToProps(state){
 }
    
 
-export default connect(mapStateToProps)(pastVisits)
+export default connect(mapStateToProps)(PastTrips)

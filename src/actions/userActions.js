@@ -38,6 +38,10 @@ export function login(username, password) {
   };
 }
 
+export const logout = () => {
+  return (dispatch) => dispatch({ type: 'LOGOUT'});
+}
+
 export const getCurrentUser = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_USER' });
@@ -49,9 +53,7 @@ export const getCurrentUser = () => {
   }
 };
 
-// export const logout = () => {
-//   return dispatch({ type: 'LOGOUT'});
-// }
+
 
 
 // const deleteUser = (id) => {

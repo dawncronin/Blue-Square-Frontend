@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 function Resorts(props) {
 
     return (
-        <div></div>
+        <div> Resorts!</div>
     )
 }
    
