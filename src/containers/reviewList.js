@@ -1,11 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import Review from '../components/review'
 
 
 function ReviewList(props) {
 
     return (
-        <div></div>
+        <div> Review List!
+            <Review/>
+        </div>
     )
 }
    

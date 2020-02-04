@@ -28,7 +28,7 @@ class AddReview extends Component {
     render() {
         return (
             <div className="addReview">
-                
+                Add Review!
             </div>
     )
     }

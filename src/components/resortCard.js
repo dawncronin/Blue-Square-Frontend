@@ -1,17 +1,24 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import { NavLink } from 'react-router-dom';
 
 
 function ResortCard(props) {
 
+    let slug = props.resort.attributes.name.split(" ").join("_")
+
     return (
-        <div></div>
+        <NavLink to={`/resorts/${slug}`}>
+        <div className="resortCard"> 
+       
+
+         <h3>{props.resort.attributes.name} </h3>
+
+         <p>{props.resort.attributes.short_desc}</p>
+        
+         </div>
+         </NavLink>
     )
 }
    
-function mapStateToProps(state){
-    return {currentUser: state.currentUser}
-}
-   
-
-export default connect(mapStateToProps)(ResortCard)
+export default connect()(ResortCard)

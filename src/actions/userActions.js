@@ -39,6 +39,7 @@ export function login(username, password) {
 }
 
 export const logout = () => {
+  localStorage.clear();  //delete token
   return (dispatch) => dispatch({ type: 'LOGOUT'});
 }
 

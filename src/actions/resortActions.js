@@ -21,12 +21,17 @@ export function getResorts() {
 
 export function getResort(name) {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_RESORTS' });
-    fetch(`${API_ROOT}resorts/name`, {
+    dispatch({ type: 'LOADING_RESORT' });
+    fetch(`${API_ROOT}resorts/${name}`, {
       method: "GET",
       headers: headers})
       .then(response => response.json())
       .then(resort => { 
+        console.log(resort)
         dispatch({ type: 'GET_RESORT', currentResort: resort.data })});
   };
+}
+
+export function filterResorts() {
+  return (dispatch) => dispatch({ type: 'LOGOUT'});
 }

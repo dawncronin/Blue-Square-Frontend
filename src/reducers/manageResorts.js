@@ -8,7 +8,7 @@ const resortReducer = (state = { resorts: [], loadingResorts: false , loadingRes
         case 'LOADING_RESORT':
             return {
             ...state,
-            loadingResorts: true
+            loadingResort: true
             }
       case 'GET_RESORTS':
         return {
