@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import userReducer from './reducers/manageUsers.js';
 import resortsReducer from './reducers/manageResorts.js';
+import reviewsReducer from './reducers/manageReviews.js';
 import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, combineReducers} from 'redux'
@@ -12,7 +13,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 const rootReducer = combineReducers({
     userReducer,
-    resortsReducer
+    resortsReducer,
+    reviewsReducer
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

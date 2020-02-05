@@ -5,15 +5,25 @@ import Review from '../components/review'
 
 function ReviewList(props) {
 
+    let mappedReviews = () => {
+        return props.reviews.map(review => {
+            return <Review review={review} key={review.id}/>
+    })}
+
+
+
     return (
-        <div> Review List!
-            <Review/>
+
+        <div> Reviews:
+            {mappedReviews()}
         </div>
     )
 }
    
 function mapStateToProps(state){
-    return {currentUser: state.currentUser}
+    return {currentUser: state.userReducer.currentUser,
+    reviews: state.reviewsReducer.reviews,
+    loading: state.reviewsReducer.loadingReviews}
 }
    
 

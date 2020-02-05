@@ -2,6 +2,7 @@ import React from 'react';
 import {logout} from '../actions/userActions'
 import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom';
+import logo from "../BlueSquare.png"
 
 function Navbar(props) {
 
@@ -11,12 +12,13 @@ function Navbar(props) {
 
     return (
         <nav>
-            <img src=""/>
             <ul>
                 {!props.currentUser.id? ( 
+                    
                 <div>
+
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/"><img src={logo} height={60} /></NavLink>
                 </li>
                 <li>
                     <NavLink to="/resorts">Resorts</NavLink>
@@ -30,8 +32,10 @@ function Navbar(props) {
                 </div>
                  ) : (
                 <div>
+                
+
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/"><img src={logo} height={60} /></NavLink>
                 </li>
                 <li>
                     <NavLink to="/resorts">Resorts</NavLink>

@@ -1,29 +1,20 @@
-const reviewsReducer = (state = {loadingReview: false, currentReview = {}}, action) => {
+const reviewsReducer = (state = {loadingReviews: false, reviews: []}, action) => {
     switch(action.type) {
-      case 'LOADING_RESORTS':
+      case 'LOADING_REVIEWS':
         return {
           ...state,
-          currentUser: state.currentUser,
-          loading: true,
-          loggedIn: false
+          reviews: state.reviews,
+          loadingReviews: true,
         }
-        case 'LOADING_RESORT':
-            return {
-              ...state,
-              currentUser: state.currentUser,
-              loading: true,
-              loggedIn: false
-            }
-      case "GET_RESORT":
+      case "GET_REVIEWS":
         return {
           ...state,
-          currentUser: {},
-          loading: false,
-          loggedIn: false
+          reviews: action.reviews,
+          loadingReviews: false,
         }
       default:
         return state;
     }
   }
   
-  export default reviewReducer;
+  export default reviewsReducer;

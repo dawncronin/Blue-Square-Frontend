@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
-import {postUser} from '../actions/userActions'
+import {postReview} from '../actions/reviewActions'
 import {connect} from 'react-redux'
 class AddReview extends Component {
     constructor() {
         super();
         this.state= {
-            error: false,
             fields: {
-                username:'',
-                password:'',
-                passwordConfirmation:''
+                rating: 1,
+                text: ""
             }
         }
     }
@@ -21,25 +19,36 @@ class AddReview extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.postUser(this.state.fields.username, this.state.fields.password, this.state.fields.passwordConfirmation)
-        this.props.history.push('/');
+        this.props.postReview(this.props.currentResort.id, this.props.currentUser.id, this.state.fields.text, this.state.fields.rating)
       };
 
     render() {
         return (
             <div className="addReview">
-                Add Review!
+                <form onSubmit={this.handleSubmit}> Add Your Review: <br/>
+                    <select name="rating" onChange={this.handleChange}>
+                        <option value="1"> One Star</option>
+                        <option value="2"> Two Star</option>
+                        <option value="2"> Three Star</option>
+                        <option value="2"> Four Star</option>
+                        <option value="2"> Five Star</option>
+
+                    </select> <br/>
+                    <textarea name="text" value={this.state.text} placeholder="What stands out from this resort?" onChange={this.handleChange}/> <br/>
+                    <input type="submit" name="Add Review" value="Add Review"/>
+                </form>
             </div>
     )
     }
 }
 
 function mapDispatchToProps(dispatch){
-    return { postUser: (username, password, passwordConfirmation) => dispatch(postUser(username, password, passwordConfirmation)) }
+    return { postReview: (resortId, userId, text, rating) => dispatch(postReview(resortId, userId, text, rating)) }
   }
    
   function mapStateToProps(state){
-    return {currentUser: state.currentUser}
+    return {currentUser: state.userReducer.currentUser,
+    currentResort: state.resortsReducer.currentResort}
   }
    
 

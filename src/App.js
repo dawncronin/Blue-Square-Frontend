@@ -27,11 +27,7 @@ class App extends Component {
     this.props.getResorts()
   }
 
-
-
 render() {
-
-
   return (
     <Router>
     <div className="app">

@@ -27,11 +27,6 @@ export function getResort(name) {
       headers: headers})
       .then(response => response.json())
       .then(resort => { 
-        console.log(resort)
         dispatch({ type: 'GET_RESORT', currentResort: resort.data })});
   };
-}
-
-export function filterResorts() {
-  return (dispatch) => dispatch({ type: 'LOGOUT'});
 }

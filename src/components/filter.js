@@ -14,6 +14,10 @@ export default class Filter extends Component {
         this.props.onFilterChange({price: e.target.value})
     }
 
+    handleSortChange = (e) => {
+        this.props.onSortChange(e.target.value)
+    }
+
     render() {
         return (
             <div className="filter">
@@ -21,7 +25,7 @@ export default class Filter extends Component {
                 <div> Daily Price: Under ${this.state.price}
                     <input type="range" name="price" min="50" max="220" step="10" value={this.state.price} onChange={this.handlePriceChange}/>
                 </div> 
-                <div>
+                {/* <div>
                     Minimum Rating:
                     <select name="Rating"> 
                         <option value="1"> 1 Star</option>
@@ -29,32 +33,32 @@ export default class Filter extends Component {
                         <option value="3">3 Star</option>
                         <option value="4">4 Star</option>
                     </select> 
-                </div>
+                </div> */}
 
                 <div> Region
-                    <select name="region"> 
-                            <option value="None">None</option>
-                        <option value="Seirra Nevadas">Sierra Nevadas</option>
+                    <select name="region" onChange={e => {this.props.onFilterChange({region: e.target.value})}}> 
+                            <option value="none">None</option>
+                        <option value="Sierra Nevadas">Sierra Nevadas</option>
                         <option value="Midwest">Midwest</option>
-                        <option value="East Coast">East Coast</option>
+                        <option value="Northeast">Northeast</option>
                         <option value="Rockies">Rockies</option>
                     </select> 
                 </div>
 
                 <div> Ski Pass:
-                    <select name="skipass"> 
-                            <option value="None">None</option>
+                    <select name="skipass" onChange={e => {this.props.onFilterChange({skipass: e.target.value})}}> 
+                            <option value="none">None</option>
                         <option value="epic">Epic Pass</option>
                         <option value="ikon">Ikon Pass</option>
                     </select> 
                 </div>
     
                 <div> 
-                    Great For Begineers: <input type="checkbox" name="begineers"/> 
+                    Great For Begineers: <input type="checkbox" name="begineers" value={true} onChange={e => {this.props.onBegineerChecked()}}/> 
                 </div>
 
                 <div>Sort Resorts:
-                    <select name="sort"> 
+                    <select name="sort" onChange={this.handleSortChange}> 
                         <option value="none">None</option>
                        <option value="snowfall">Yearly Snowfall</option>
                        <option value="vertical">Vertical Drop</option>
