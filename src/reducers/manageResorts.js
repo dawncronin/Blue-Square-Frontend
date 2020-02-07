@@ -1,4 +1,4 @@
-const resortReducer = (state = { resorts: [], loadingResorts: false , loadingResort: false, currentResort: {}}, action) => {
+const resortReducer = (state = { resorts: [], loadingResorts: false , savedResorts: [], type: "", loadingResort: false, currentResort: {}}, action) => {
     switch(action.type) {
       case 'LOADING_RESORTS':
         return {
@@ -22,6 +22,18 @@ const resortReducer = (state = { resorts: [], loadingResorts: false , loadingRes
           currentResort: action.currentResort,
           loadingResort: false
         }
+      case "LOADING_SAVED_RESORTS":
+        return {
+            ...state,
+            loadingSavedResorts: true
+            }
+        case "GET_SAVED_RESORTS":
+          return {
+            ...state,
+            savedResorts: action.savedResorts,
+            loadingSavedResorts: false,
+            saveType: action.saveType
+          }
       default:
         return state;
     }

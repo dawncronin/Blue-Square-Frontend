@@ -8,11 +8,12 @@ import {getResorts} from "../actions/resortActions"
 class ResortsList extends Component{
 
     render() {
-        let resorts = this.props.filteredResorts.map(resort =>  <ResortCard resort={resort} key={resort.id}/> )
+        let resorts = this.props.filteredResorts.map(resort =>  <ResortCard resort={resort} key={resort.id}/> ) 
+        
 
     return(
-            <div>
-                {this.props.loadingResorts?  "loading..." : resorts}
+            <div className="resortList">
+                {resorts}
             </div>
         )
     }

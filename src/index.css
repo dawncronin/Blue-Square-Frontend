@@ -4,6 +4,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(240, 240, 248) ;
+
 }
 
 code {
@@ -11,6 +13,107 @@ code {
     monospace;
 }
 
-datalist {
-  display: inline-block
+nav {
+  font-weight: 30px;
+  right: 0;
+  left: 0;
+  top: 0;
+  position: fixed;
+  height: 120px;
+  background-image: url("https://i.imgur.com/eVglBi8.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 500;
+  box-shadow: 2px 5px 5px -2px rgba(0,0,0,.2);
 }
+nav li {
+  bottom: 0;
+  padding: 10px 10px 10px 10px;
+  float: left;
+ display: inline;
+ text-decoration: none;
+
+}
+
+nav a {
+  font-weight: bold;
+ text-decoration: none;
+ color: rgb(249, 249, 253);
+ text-shadow: 2px 2px #444346;
+} 
+a{
+  text-decoration: none;
+  color: rgb(20, 20, 20);
+}
+
+a:hover {
+  color: gray;
+}
+
+.navitems {
+  margin: 10px, 10px, 10px, 10px;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  width: 100%;
+}
+
+.navitems img {
+  float: left;
+  left: 25px;
+}
+
+.logout {
+  position: absolute;
+  right: -40;
+}
+
+.resorts{
+  position: absolute;
+  top: 150px;
+display: grid ;
+grid-template-columns: 20% 30% 50%;
+/* grid-template-rows: 1fr 2fr 1fr; */
+}
+
+.filter {
+  position: fixed;
+  grid-row-start: 2;
+  grid-row-end: -1;
+  grid-column: 1;
+  text-align: center;
+}
+
+.resortList{
+  grid-column: 2;
+  overflow-y: hidden;
+
+}
+
+.mapBox{
+  position: fixed;
+  right: 10px;
+  top: 180px;
+}
+
+.wannaGo {
+  position: absolute;
+  top: 150px;
+}
+
+.pastTrips {
+  position: absolute;
+  top: 150px;
+}
+
+.resortPage {
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+  /* position: absolute; */
+  top: 150;
+  text-align: center;
+
+}
+
+

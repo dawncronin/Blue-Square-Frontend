@@ -115,7 +115,7 @@ class Resorts extends Component {
         <div className="resorts"> 
         <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
         <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} />
-        {/* <MapBox filteredResorts={this.state.filteredResorts} /> */}
+        <MapBox filteredResorts={this.state.filteredResorts} />
         </div>
     )
     }

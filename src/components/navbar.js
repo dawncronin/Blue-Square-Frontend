@@ -11,15 +11,13 @@ function Navbar(props) {
     }
 
     return (
-        <nav>
+        <nav className="nav">
             <ul>
                 {!props.currentUser.id? ( 
                     
-                <div>
+                <div className="navitems">
+                        <NavLink to="/"><img src={logo} height={40} /></NavLink>
 
-                <li>
-                    <NavLink to="/"><img src={logo} height={60} /></NavLink>
-                </li>
                 <li>
                     <NavLink to="/resorts">Resorts</NavLink>
                 </li>
@@ -31,12 +29,9 @@ function Navbar(props) {
                 </li>
                 </div>
                  ) : (
-                <div>
-                
+                <div className="navitems">
+                     <NavLink to="/"><img src={logo} height={40} /></NavLink>
 
-                <li>
-                    <NavLink to="/"><img src={logo} height={60} /></NavLink>
-                </li>
                 <li>
                     <NavLink to="/resorts">Resorts</NavLink>
                 </li>
@@ -46,8 +41,8 @@ function Navbar(props) {
                 <li>
                     <NavLink to="/pastTrips">Past Trips</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/" onClick={handleOnClick}>Logout</NavLink>
+                <li >
+                    <NavLink  className="logout" to="/" onClick={handleOnClick}>Logout</NavLink>
                 </li>
                 </div>
                 )}

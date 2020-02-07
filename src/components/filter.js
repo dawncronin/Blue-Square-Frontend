@@ -22,9 +22,11 @@ export default class Filter extends Component {
         return (
             <div className="filter">
 
-                <div> Daily Price: Under ${this.state.price}
+                <div> Daily Price:  Under ${this.state.price} <br/>
                     <input type="range" name="price" min="50" max="220" step="10" value={this.state.price} onChange={this.handlePriceChange}/>
                 </div> 
+
+                <br/>
                 {/* <div>
                     Minimum Rating:
                     <select name="Rating"> 
@@ -35,7 +37,7 @@ export default class Filter extends Component {
                     </select> 
                 </div> */}
 
-                <div> Region
+                <div> Region:
                     <select name="region" onChange={e => {this.props.onFilterChange({region: e.target.value})}}> 
                             <option value="none">None</option>
                         <option value="Sierra Nevadas">Sierra Nevadas</option>
@@ -45,6 +47,8 @@ export default class Filter extends Component {
                     </select> 
                 </div>
 
+                <br/>
+
                 <div> Ski Pass:
                     <select name="skipass" onChange={e => {this.props.onFilterChange({skipass: e.target.value})}}> 
                             <option value="none">None</option>
@@ -52,10 +56,15 @@ export default class Filter extends Component {
                         <option value="ikon">Ikon Pass</option>
                     </select> 
                 </div>
-    
+
+                <br/>
+
                 <div> 
                     Great For Begineers: <input type="checkbox" name="begineers" value={true} onChange={e => {this.props.onBegineerChecked()}}/> 
                 </div>
+
+                <br/>
+                
 
                 <div>Sort Resorts:
                     <select name="sort" onChange={this.handleSortChange}> 

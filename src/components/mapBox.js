@@ -9,12 +9,14 @@ import { InfoWindow } from '@react-google-maps/api';
 function MapBox(props) {
 
     return (
+      <div className="mapBox">
         <LoadScript id="script-loader" googleMapsApiKey={googleMapsKey} >
-        <GoogleMap id='example-map'   mapContainerStyle={{ height: "400px", width: "800px"}}
+        <GoogleMap id='example-map'   mapContainerStyle={{ height: "400px", width: "550px"}}
     zoom={7} center={{lat: -3.745, lng: -38.523}}>
           {/* ...Your map components */}
         </GoogleMap>
       </LoadScript>
+      </div>
     )
 }
    

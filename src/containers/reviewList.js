@@ -6,9 +6,17 @@ import Review from '../components/review'
 function ReviewList(props) {
 
     let mappedReviews = () => {
-        return props.reviews.map(review => {
-            return <Review review={review} key={review.id}/>
-    })}
+        console.log(props.reviews)
+        if (!props.loading && props.reviews) {
+            return props.reviews.map(review => {
+                return <Review review={review} key={review.id}/>
+        })}
+        else {
+            return "loading..."
+
+        }
+       
+    }
 
 
 
