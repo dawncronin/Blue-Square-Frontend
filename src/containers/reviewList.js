@@ -22,7 +22,7 @@ function ReviewList(props) {
 
     return (
 
-        <div> Reviews:
+        <div className="reviewList"> Reviews:
             {mappedReviews()}
         </div>
     )

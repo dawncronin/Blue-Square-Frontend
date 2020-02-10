@@ -5,7 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(240, 240, 248) ;
-
 }
 
 code {
@@ -27,6 +26,7 @@ nav {
   z-index: 500;
   box-shadow: 2px 5px 5px -2px rgba(0,0,0,.2);
 }
+
 nav li {
   bottom: 0;
   padding: 10px 10px 10px 10px;
@@ -42,6 +42,7 @@ nav a {
  color: rgb(249, 249, 253);
  text-shadow: 2px 2px #444346;
 } 
+
 a{
   text-decoration: none;
   color: rgb(20, 20, 20);
@@ -73,28 +74,61 @@ a:hover {
   position: absolute;
   top: 150px;
 display: grid ;
-grid-template-columns: 20% 30% 50%;
+grid-template-columns: 15% 40% 45%;
 /* grid-template-rows: 1fr 2fr 1fr; */
 }
 
 .filter {
   position: fixed;
+  top: 200px;
   grid-row-start: 2;
   grid-row-end: -1;
   grid-column: 1;
   text-align: center;
+  background-color: rgb(195, 195, 211);
+  border-radius: 4px;
 }
+
+.price, .region, .pass, .begineers {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  padding-top: 20px;
+  padding-bottom: 20px;
+   padding-left: 10px; 
+  padding-right: 10px;
+}
+
+.sort {
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  padding-top: 20px;
+  padding-bottom: 20px;
+   padding-left: 10px; 
+  padding-right: 10px;
+
+}
+
 
 .resortList{
   grid-column: 2;
   overflow-y: hidden;
+    padding-left: 20px;
+  padding-right: 20px;
 
 }
 
 .mapBox{
   position: fixed;
-  right: 10px;
   top: 180px;
+  right: 650px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+
+  
 }
 
 .wannaGo {
@@ -108,12 +142,77 @@ grid-template-columns: 20% 30% 50%;
 }
 
 .resortPage {
-  /* grid-column-start: 1;
-  grid-column-end: 3; */
-  /* position: absolute; */
-  top: 150;
+  display: grid ;
+  grid-template-columns: 20% 60% 20%;
+  position: absolute;
+  top: 200px;
   text-align: center;
 
 }
 
+.resortCard {
+  text-align: center;
+  /* background-color: rgb(172, 172, 219); */
+  border-color: gray;
+  border-radius: 4px;
+  padding: 2px 2px 2px 2px;
+  margin: 2px 2px 2px 2px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.resortCard:hover {
+  background-color: rgb(167, 177, 223); 
+  color: black;
+}
+
+
+.resortBox {
+  grid-column: 2;
+}
+
+
+
+
+.reviewList{
+  grid-column: 1
+}
+
+.filter select {
+  display: block;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: .6em 1em .5em .8em;
+  width: 100%;
+  max-width: 100%; 
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+    linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+.login, .signup {
+  position: absolute;
+  top: 200px;
+}
+
+#resortImage {
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: rgb(16, 16, 56);
+}
 

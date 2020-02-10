@@ -5,6 +5,7 @@ import {getReviews} from "../actions/reviewActions"
 import {saveResort} from "../actions/resortActions"
 import AddReview from "../components/addReview"
 import ReviewList from "../containers/reviewList"
+import ResortBox from "../components/resortBox"
 
 class ResortPage extends Component {
     constructor() {
@@ -27,31 +28,27 @@ class ResortPage extends Component {
         event.preventDefault()
         if (this.state.saveResort !== "") {
             console.log(this.props)
-            this.props.saveResort(this.props.currentUser.id, this.props.currentResort.data.id, this.state.saveResort)
+            this.props.saveResort(this.props.currentUser.id, this.props.currentResort.resort.data.id, this.state.saveResort)
         }
+    }
+    handleAddPhoto = (event) => {
+
     }
 
     render() {
-        let saved = this.props.currentResort.included? (
-            this.props.currentResort.included.find(savedResort => savedResort.relationships.user.data.id == this.props.currentUser.id)
+        let saved = this.props.currentResort.savedResort? (
+            this.props.currentResort.savedResort.data.find(savedResort => savedResort.relationships.user.data.id == this.props.currentUser.id)
         ) : (
             false
         )
-        console.log(saved)
+
         return (
             <div className="resortPage">
-                <p>blurp blupr</p>
-                 <br/>
-                 <br/>
-                 <br/>
-                 <br/>
-                 <br/>
-                 <br/>
 
-               {this.props.currentResort.data? (this.props.currentResort.data.attributes.name 
+               {this.props.currentResort.resort? (<ResortBox resort={this.props.currentResort.resort.data} photos={this.props.currentResort.photos.data}/>
                ) : ( "loading" ) }
 
-               {!this.props.currentResort.data?  ( "loading" ) : (
+               {!this.props.currentResort.resort?  ( "loading" ) : (
                    !saved ? (
                     <form onSubmit={this.onSave}>
                     <select onChange={this.onSelection}>
@@ -63,10 +60,21 @@ class ResortPage extends Component {
                    </form> )
                      : (
                          <p> Saved to your resorts!</p>
-                     )
-                   )}
+                     ))}
+
+                {!this.props.currentResort.resort? ("loading...") : (
+
+                
+                   <form onSubmit={this.handleAddPhoto}> Add a photo of {this.props.currentResort.resort.data.attributes.name}:
+                   <input type="file" id="photo" name="photo" accept="image/png, image/jpeg"></input>
+
+                   <input type="submit"></input>
+                   
+
+               </form>
+
+                )}
               
-               
                <AddReview/>
                <ReviewList/>
             </div>
