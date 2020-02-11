@@ -9,7 +9,8 @@ class Signup extends Component {
             fields: {
                 username:'',
                 password:'',
-                passwordConfirmation:''
+                passwordConfirmation:'',
+                email: ''
             }
         }
     }
@@ -27,6 +28,7 @@ class Signup extends Component {
 
     render() {
         return (
+            <div className="signupPage">
             <div className="signup">
                 <h2> Sign Up</h2>
                 {this.state.error ? <h3>Invalid Inputs, try again</h3> : null}
@@ -34,14 +36,15 @@ class Signup extends Component {
                     <label> 
                     <input type="text" name="username" placeholder="username" onChange={this.handleChange}/>
                     </label> <br/>
-                    <label> Ski/Board Level:
+                    <input type="text" name="email" placeholder="email" onChange={this.handleChange}/>
+                    {/* <label> Ski/Board Level:
                     <select  name="level" placeholder="level" onChange={this.handleChange}>
                         <option value="begineer">Begineer</option>
                         <option value="intermediate">Intermediate</option>
                         <option value="advanced">Advanced</option>
                         <option value="expert">Expert</option>
-                    </ select>
-                    </label> <br/>
+                    </ select> */}
+                    {/* </label> <br/> */}
                     <label> 
                     <input type="password" name="password" placeholder="password" onChange={this.handleChange}/> 
                     </label> <br/>
@@ -50,6 +53,7 @@ class Signup extends Component {
                     </label>
                     <input type="submit" value="Signup" />
                 </form>
+            </div>
             </div>
     )
     }

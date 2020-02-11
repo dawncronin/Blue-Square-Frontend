@@ -12,6 +12,7 @@ class ResortPage extends Component {
         super()
         this.state = {
             saveResort: "",
+            saved: ""
         }
     }
 
@@ -24,15 +25,20 @@ class ResortPage extends Component {
         this.setState({saveResort: event.target.value})
     }
 
+    componentDidUpdate(prevProps) {
+        console.log(prevProps)
+        if (this.props.currentResort.saved_resorts !== prevProps.currentResort.saved_resorts) {
+           let saved = this.props.currentResort.saved_resorts.data.find(savedResort => savedResort.relationships.user.data.id == this.props.currentUser.id)
+           console.log(saved)
+           this.setState({saved: saved})
+        }
+    }
+
     onSave = (event) => {
         event.preventDefault()
         if (this.state.saveResort !== "") {
-            console.log(this.props)
             this.props.saveResort(this.props.currentUser.id, this.props.currentResort.resort.data.id, this.state.saveResort)
         }
-    }
-    handleAddPhoto = (event) => {
-
     }
 
     render() {
@@ -45,41 +51,47 @@ class ResortPage extends Component {
         return (
             <div className="resortPage">
 
-               {this.props.currentResort.resort? (<ResortBox resort={this.props.currentResort.resort.data} photos={this.props.currentResort.photos.data}/>
-               ) : ( "loading" ) }
+                <div className="resortBoxCont" >
 
+               {this.props.currentResort.resort? (<ResortBox 
+                    resort={this.props.currentResort.resort.data} 
+                    photo={this.props.currentResort.photo.data}     
+                    onSave={this.onSave}
+                    onSelection={this.onSelection}
+                    saved={this.state.saved}
+                    />
+               ) : ( "loading" ) }
+               </div>
+
+               {/* <div className="saveResort">
                {!this.props.currentResort.resort?  ( "loading" ) : (
+
                    !saved ? (
-                    <form onSubmit={this.onSave}>
+                       <div id="save">
+                    <form onSubmit={this.onSave}>  Interested in {this.props.currentResort.resort.data.attributes.name}?
+
                     <select onChange={this.onSelection}>
                      <option value="" disabled selected>Save Resort</option>
                         <option value="wannaGo"> Wanna Go</option>
                         <option value="pastTrip"> Have Visited</option>
                     </select>
                     <input type="submit"/>
-                   </form> )
+                   </form>
+                   </div> )
                      : (
                          <p> Saved to your resorts!</p>
                      ))}
-
-                {!this.props.currentResort.resort? ("loading...") : (
-
-                
-                   <form onSubmit={this.handleAddPhoto}> Add a photo of {this.props.currentResort.resort.data.attributes.name}:
-                   <input type="file" id="photo" name="photo" accept="image/png, image/jpeg"></input>
-
-                   <input type="submit"></input>
-                   
-
-               </form>
-
-                )}
-              
+               
+                </div> */}
+              <div className="reviewSection">
                <AddReview/>
                <ReviewList/>
+               </div>
+
             </div>
         )
         } 
+
 }
    
 function mapDispatchToProps(dispatch){

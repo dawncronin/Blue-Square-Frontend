@@ -9,12 +9,13 @@ function ResortCard(props) {
 
     return (
         <NavLink to={`/resorts/${slug}`}>
-        <div className="resortCard"> 
-       
+        <div className="resortCard">
+            <div  id="resortCardPhoto">
+            <img src={props.resort.attributes.photo.photo_url}/>
+            </div >
+         <div id="resortCardName">{props.resort.attributes.name} </div>
 
-         <h3>{props.resort.attributes.name} </h3>
-
-         <p>{props.resort.attributes.short_desc}</p>
+         <p id="resortCardText">{props.resort.attributes.short_desc.substring(0, 250)}...</p>
         
          </div>
          </NavLink>

@@ -67,7 +67,16 @@ class MapBox extends Component {
       <div className="mapBox">
         <Map google={this.props.google}   
         zoom={4} 
-        style={{height: 550, width: 600}}
+        style={{
+          width: "100%",
+          height: "87%"
+        }}
+        containerStyle={{
+          position: 'fixed',  
+          width: '45%',
+          height: '100%',
+          top: "120px"
+        }}
         initialCenter={{lat: this.state.centerLat, lng: this.state.centerLong}}
         >
 

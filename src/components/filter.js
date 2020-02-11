@@ -20,6 +20,7 @@ export default class Filter extends Component {
 
     render() {
         return (
+            <div className="filterContainer">
             <div className="filter">
                 <h3> Filter Results:</h3>
 
@@ -70,6 +71,7 @@ export default class Filter extends Component {
                        <option value="terrain_parks">Terrain Parks</option>
                     </select> 
                 </div>
+            </div>
             </div>
     )
     }

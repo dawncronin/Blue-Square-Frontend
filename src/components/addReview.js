@@ -19,14 +19,15 @@ class AddReview extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.postReview(this.props.currentResort.data.id, this.props.currentUser.id, this.state.fields.text, this.state.fields.rating)
+        this.props.postReview(this.props.currentResort.resort.data.id, this.props.currentUser.id, this.state.fields.text, this.state.fields.rating)
       };
 
     render() {
         return (
             <div className="addReview">
-                <form onSubmit={this.handleSubmit}> Add Your Review: <br/>
-                    <select name="rating" onChange={this.handleChange}>
+                {!this.props.currentResort.resort? ("loading..." ) : (
+                <form onSubmit={this.handleSubmit}> Add your review of {this.props.currentResort.resort.data.attributes.name}: <br/>
+                    <select id="rating" name="rating" onChange={this.handleChange}>
                         <option value="1"> One Star</option>
                         <option value="2"> Two Star</option>
                         <option value="3"> Three Star</option>
@@ -34,9 +35,10 @@ class AddReview extends Component {
                         <option value="5"> Five Star</option>
 
                     </select> <br/>
-                    <textarea name="text" value={this.state.text} placeholder="What stands out from this resort?" onChange={this.handleChange}/> <br/>
+                    <textarea name="text" value={this.state.text} placeholder={`What stands out from ${this.props.currentResort.resort.data.attributes.name}?`} onChange={this.handleChange}/> <br/>
                     <input type="submit" name="Add Review" value="Add Review"/>
                 </form>
+                )}
             </div>
     )
     }

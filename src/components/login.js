@@ -27,7 +27,9 @@ class Login extends Component {
 
     render() {
     return (
+        <div className="loginPage">
         <div className="login">
+            <br/>
             <h2> Login</h2>
             {this.state.error ? <h4>Invalid Username or Password, Try Again</h4> : null}
             <form className="loginForm" onSubmit={this.handleSubmit}>
@@ -39,6 +41,7 @@ class Login extends Component {
                 </label> <br/>
                 <input type="submit" value="Login" />
             </form>
+        </div>
         </div>
     )
     }

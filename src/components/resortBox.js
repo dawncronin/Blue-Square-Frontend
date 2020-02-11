@@ -3,42 +3,79 @@ import {connect} from 'react-redux'
 import { Doughnut } from 'react-chartjs-2';
 
 
-function ResortBox(props) {
+function ResortBox(props) { 
 
     return (
-        <div className="resortBox">
+        <div >
             {props.resort.attributes? (
 
-        <div>
-         <h1 id="resortTitle">{props.resort.attributes.name} </h1>
-         <p> Located in {props.resort.attributes.state} in the {props.resort.attributes.region} </p>
-         <img id="resortImage" src={props.photos[0].attributes.photo_url} height="500px"/>
+        <div className="resortBox">
+       
+         <div id="resortImageBox"> 
+         <img id="resortImage" src={props.photo.attributes.photo_url}/>
+         </div>
+
+         <div className="resortImageText">
+             <div className="fuckcss"> 
+         <h1>{props.resort.attributes.name} </h1>
+         <a  id="visit" target="_blank" href={props.resort.attributes.link}> Visit Website </a>
+         <p id="location"> Located in {props.resort.attributes.state} in the {props.resort.attributes.region} </p>
+         <div className="saveResort">
+               {!props.resort?  ( "loading" ) : (
+
+                   !props.saved ? (
+                       <div id="save">
+                    <form onSubmit={props.onSave}>  Interested in {props.resort.attributes.name}?
+
+                    <select onChange={props.onSelection}>
+                     <option value="" disabled selected>Save Resort</option>
+                        <option value="wannaGo"> Wanna Go</option>
+                        <option value="pastTrip"> Have Visited</option>
+                    </select>
+                    <input type="submit" value="Save!"/>
+                   </form>
+                   </div> )
+                     : (
+                         <p> Saved to your resorts!</p>
+                     ))}
+               
+                </div>
+         </div>
+         </div>
+
+ 
          <br/>
-         <a  target="_blank" href={props.resort.attributes.link}> Visit Website </a>
 
 
-         <p>{props.resort.attributes.long_desc}</p>
+         <p id="desc">{props.resort.attributes.long_desc}</p>
 
-         <p> Runs: {props.resort.attributes.runs}</p>
+         <p id="runs"> Runs: {props.resort.attributes.runs}</p>
 
-         <p> Lifts: {props.resort.attributes.lifts} </p>
+         <p id="lifts"> Lifts: {props.resort.attributes.lifts} </p>
 
-         <p> Daily Price: ${props.resort.attributes.price} </p>
+         <p id="price"> Daily Price: ${props.resort.attributes.price} </p>
 
-         <p> Yearly Snowfall: {props.resort.attributes.snowfall} </p>
+         <p id="snow"> Yearly Snowfall: {props.resort.attributes.snowfall} in </p>
 
-         <p> Vertical Drop: {props.resort.attributes.vertical} ft</p>
+         <p id="vertical"> Vertical Drop: {props.resort.attributes.vertical} ft</p>
 
-         <p> Summit Height: {props.resort.attributes.summit} ft</p>
-
-         <p> Yearly Snowfall: {props.resort.attributes.snowfall} </p>
-
-         <p> {props.resort.attributes.terrain_parks} Terrain Parks</p>
-
-         <p> Opening Date: {props.resort.attributes.open_date}    Closing Date: {props.resort.attributes.close_date}</p>
+         <p id="summit"> Summit Height: {props.resort.attributes.summit} ft</p>
 
 
-         < Doughnut data={{labels: ['Green Runs', 'Blue Runs', 'Black Runs', 'Double Black Runs'],
+         <p id="terrain"> {props.resort.attributes.terrain_parks} Terrain Parks</p>
+
+         <p id="open"> Opening Date: {props.resort.attributes.open_date}</p>  
+        <p id="close">  Closing Date: {props.resort.attributes.close_date}</p>
+
+
+
+
+         <div className="pie"> 
+         < Doughnut 
+           width={300}
+           height={300}
+           options={{ maintainAspectRatio: false }}
+       data={{labels: ['Green Runs', 'Blue Runs', 'Black Runs', 'Double Black Runs'],
         datasets: [{
             label: 'Runs Percentages',
             data: [props.resort.attributes.green, props.resort.attributes.blue, props.resort.attributes.black, props.resort.attributes.double_black],
@@ -48,14 +85,9 @@ function ResortBox(props) {
                 'rgba(100, 100, 100, 0.8)',
                 'rgba(0, 0, 0, 0.8)',
             ]
-        }]
+        }],
     }}/>
-
-
-
-
-
-
+    </div>
             
          </div>
             ):("loading...")}
