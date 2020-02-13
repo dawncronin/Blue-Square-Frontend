@@ -14,7 +14,10 @@ class Resorts extends Component {
             region: "none",
             skipass: "none",
             begineer: false,
-            sort: "none"
+            sort: "none",
+            centerLat: 39.8283,
+            centerLong: -98.5795,
+            zoom: 4
         }
     }
 
@@ -57,9 +60,57 @@ class Resorts extends Component {
             resorts = resorts.filter( resort => resort.attributes.begineer)
         }
 
-        
+        let lats = resorts.map(resort => resort.attributes.lat)
+        let longs = resorts.map(resort=> resort.attributes.long)
+        let maxLat = Math.max(...lats)
+        let maxLong = Math.max(...longs)
+        let minLat = Math.min(...lats)
+        let minLong = Math.min(...longs)
 
-       this.setState({ filteredResorts: resorts}, () => {
+
+        let centerLat = (maxLat + minLat)/2
+        let centerLong = (maxLong + minLong)/2
+
+        let zoom = 4
+        if (centerLat && centerLong) {
+            let difLat = (maxLat - minLat)
+            let difLong = (maxLong - minLong)
+
+            console.log(difLong, difLat)
+
+            if ( difLong > 40) {
+                zoom = 4
+            }
+            else if ( difLong > 6 || difLat > 6) {
+                zoom = 5
+            }
+            else if (difLong > 5 || difLong > 5) {
+                zoom = 6
+            }
+            else if (difLong > 4 || difLong > 4) {
+                zoom = 7
+            }
+            else if (difLong > 1 || difLong > 1) {
+                zoom = 7
+            }
+            else if (difLong > 0.01) {
+                zoom = 9
+            }
+            else {
+                zoom = 14
+            }
+        }
+        else {
+            centerLat = this.state.centerLat
+            centerLong = this.state.centerLong
+        }
+
+    
+       this.setState({ filteredResorts: resorts,
+            centerLat: centerLat,
+            centerLong: centerLong,
+            zoom: zoom
+    }, () => {
            this.onSortChange(this.state.sort)
        })
     }
@@ -117,13 +168,16 @@ class Resorts extends Component {
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
+
     return (
         <div className="resorts"> 
         <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
         <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} />
-        <MapBox filteredResorts={this.state.filteredResorts} />
+        <MapBox filteredResorts={this.state.filteredResorts} 
+            centerLat={this.state.centerLat} 
+            centerLong={this.state.centerLong} 
+            zoom={this.state.zoom}
+            />
         </div>
     )
     }

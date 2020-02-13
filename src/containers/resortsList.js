@@ -13,7 +13,7 @@ class ResortsList extends Component{
 
     return(
             <div className="resortList">
-                {resorts}
+                    {resorts}
             </div>
         )
     }

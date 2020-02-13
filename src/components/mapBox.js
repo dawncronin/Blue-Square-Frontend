@@ -50,26 +50,25 @@ class MapBox extends Component {
   }
 
   render() {
-
     let slug =  this.state.selectedPlace.resort? this.state.selectedPlace.resort.attributes.name.split(" ").join("_") : ""
-
-
 
     return (
       <div className="mapBox">
         <Map google={this.props.google}   
-        zoom={4} 
+        zoom={this.props.zoom} 
         style={{
           width: "100%",
           height: "90%"
         }}
         containerStyle={{
-          position: 'fixed',  
+          position: 'fixed',
+          right: "0" ,
           width: '45%',
           height: '100%',
           top: "10%"
         }}
-        initialCenter={{lat: this.state.centerLat, lng: this.state.centerLong}}
+        // initialCenter={{lat: this.props.centerLat, lng: this.props.centerLong}}
+        center={{lat: this.props.centerLat, lng: this.props.centerLong}}
         >
 
           {this.markers()}
