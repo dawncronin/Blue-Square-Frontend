@@ -23,10 +23,11 @@ function Home(props) {
                 For someone new to skiing or boarding, I have included ways to check for easy runs and places well suited for begineers. 
 
                 <br/> <br/>
-                The name blue square comes from the full name intermeidate runs.
+                The name blue square comes from the full name intermediate runs.
                  No one says "blue square" the way people say "black diamond", so here is an homage to the intermediate runs!            
                  </div>
             </div>
+            <div className="footer"></div>
         </div>
     )
 }

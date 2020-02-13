@@ -3,13 +3,13 @@ import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom';
 
 
-function ResortCard(props) {
+function SavedResortCard(props) {
 
     let slug = props.resort.attributes.name.split(" ").join("_")
 
     return (
         <NavLink to={`/resorts/${slug}`}>
-        <div className="resortCard">
+        <div className="savedResortCard">
             <div  id="resortCardPhoto">
             <img src={props.resort.attributes.photo.photo_url} alt=""/>
             </div >
@@ -22,4 +22,4 @@ function ResortCard(props) {
     )
 }
    
-export default connect()(ResortCard)
+export default connect()(SavedResortCard)

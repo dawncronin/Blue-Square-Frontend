@@ -18,6 +18,10 @@ class Resorts extends Component {
         }
     }
 
+    componentDidUpdate() {
+        console.log(this.state)
+    }
+
     componentWillReceiveProps(props) {
         this.setState({filteredResorts: props.resorts})
     }
@@ -52,6 +56,9 @@ class Resorts extends Component {
         if (this.state.begineer) {
             resorts = resorts.filter( resort => resort.attributes.begineer)
         }
+
+        
+
        this.setState({ filteredResorts: resorts}, () => {
            this.onSortChange(this.state.sort)
        })
@@ -106,11 +113,12 @@ class Resorts extends Component {
                 break
             } 
         }
-
         this.setState({filteredResorts: sorted})
     }
 
     render() {
+        console.log(this.props)
+        console.log(this.state)
     return (
         <div className="resorts"> 
         <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>

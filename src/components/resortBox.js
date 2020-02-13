@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import { Doughnut } from 'react-chartjs-2';
+import location from "../location.png"
 
 
 function ResortBox(props) { 
@@ -12,22 +13,24 @@ function ResortBox(props) {
         <div className="resortBox">
        
          <div id="resortImageBox"> 
-         <img id="resortImage" src={props.photo.attributes.photo_url}/>
+         <img id="resortImage" src={props.photo.attributes.photo_url} alt=""/>
          </div>
 
          <div className="resortImageText">
              <div className="fuckcss"> 
-         <h1>{props.resort.attributes.name} </h1>
+         <h1 id="resortBoxTitle">{props.resort.attributes.name} </h1>
          <a  id="visit" target="_blank" href={props.resort.attributes.link}> Visit Website </a>
-         <p id="location"> Located in {props.resort.attributes.state} in the {props.resort.attributes.region} </p>
+         <p id="location"> <img src={location} alt="" height="30px"/> {props.resort.attributes.state}, {props.resort.attributes.region} </p>
+         
+         
          <div className="saveResort">
-               {!props.resort?  ( "loading" ) : (
+               {!props.loggedIn?  ( "" ) : (
 
                    !props.saved ? (
-                       <div id="save">
+                    <div id="save">
                     <form onSubmit={props.onSave}>  Interested in {props.resort.attributes.name}?
 
-                    <select onChange={props.onSelection}>
+                    <select id="selectSaveType" onChange={props.onSelection}>
                      <option value="" disabled selected>Save Resort</option>
                         <option value="wannaGo"> Wanna Go</option>
                         <option value="pastTrip"> Have Visited</option>
@@ -36,16 +39,18 @@ function ResortBox(props) {
                    </form>
                    </div> )
                      : (
-                         <p> Saved to your resorts!</p>
+                     <p> Saved to your resorts!
+                      <button onClick={props.onDelete} className="deleteButton">Remove</button>
+                     </p>
                      ))}
                
                 </div>
          </div>
+
+
          </div>
 
- 
          <br/>
-
 
          <p id="desc">{props.resort.attributes.long_desc}</p>
 
@@ -54,6 +59,8 @@ function ResortBox(props) {
          <p id="lifts"> Lifts: {props.resort.attributes.lifts} </p>
 
          <p id="price"> Daily Price: ${props.resort.attributes.price} </p>
+
+         <p id ="acres"> Skiable Acres: {props.resort.attributes.acres}</p>
 
          <p id="snow"> Yearly Snowfall: {props.resort.attributes.snowfall} in </p>
 

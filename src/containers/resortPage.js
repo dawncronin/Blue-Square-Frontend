@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {getResort} from "../actions/resortActions"
 import {getReviews} from "../actions/reviewActions"
 import {saveResort} from "../actions/resortActions"
+import {deleteSavedResort} from "../actions/resortActions"
+
 import AddReview from "../components/addReview"
 import ReviewList from "../containers/reviewList"
 import ResortBox from "../components/resortBox"
@@ -12,7 +14,8 @@ class ResortPage extends Component {
         super()
         this.state = {
             saveResort: "",
-            saved: ""
+            saved: "",
+            saveId: ""
         }
     }
 
@@ -26,10 +29,12 @@ class ResortPage extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        console.log(prevProps)
-        if (this.props.currentResort.saved_resorts !== prevProps.currentResort.saved_resorts) {
-           let saved = this.props.currentResort.saved_resorts.data.find(savedResort => savedResort.relationships.user.data.id == this.props.currentUser.id)
-           console.log(saved)
+        if ((this.props.currentResort.saved_resorts) && (this.props.currentResort.saved_resorts !== prevProps.currentResort.saved_resorts || this.props.currentUser !== prevProps.currentUser)) {
+           let saved = this.props.currentResort.saved_resorts.data.find(savedResort => savedResort.relationships.user.data.id === this.props.currentUser.id)
+           if (saved) {
+            this.setState({savedId: saved.id})
+               saved = saved.attributes.save_type
+           }
            this.setState({saved: saved})
         }
     }
@@ -41,12 +46,13 @@ class ResortPage extends Component {
         }
     }
 
+    onDelete = (event) => {
+        event.preventDefault()
+        this.props.deleteSavedResort(this.state.savedId)
+    }
+
     render() {
-        let saved = this.props.currentResort.savedResort? (
-            this.props.currentResort.savedResort.data.find(savedResort => savedResort.relationships.user.data.id == this.props.currentUser.id)
-        ) : (
-            false
-        )
+
 
         return (
             <div className="resortPage">
@@ -57,38 +63,24 @@ class ResortPage extends Component {
                     resort={this.props.currentResort.resort.data} 
                     photo={this.props.currentResort.photo.data}     
                     onSave={this.onSave}
+                    onDelete={this.onDelete}
                     onSelection={this.onSelection}
                     saved={this.state.saved}
+                    loggedIn={this.props.loggedIn}
                     />
                ) : ( "loading" ) }
                </div>
 
-               {/* <div className="saveResort">
-               {!this.props.currentResort.resort?  ( "loading" ) : (
-
-                   !saved ? (
-                       <div id="save">
-                    <form onSubmit={this.onSave}>  Interested in {this.props.currentResort.resort.data.attributes.name}?
-
-                    <select onChange={this.onSelection}>
-                     <option value="" disabled selected>Save Resort</option>
-                        <option value="wannaGo"> Wanna Go</option>
-                        <option value="pastTrip"> Have Visited</option>
-                    </select>
-                    <input type="submit"/>
-                   </form>
-                   </div> )
-                     : (
-                         <p> Saved to your resorts!</p>
-                     ))}
-               
-                </div> */}
               <div className="reviewSection">
-               <AddReview/>
+                  {this.props.loggedIn ? (
+                                     <AddReview/>
+                  ) : (
+                      ""
+                  )}
                <ReviewList/>
                </div>
-
             </div>
+
         )
         } 
 
@@ -97,14 +89,18 @@ class ResortPage extends Component {
 function mapDispatchToProps(dispatch){
     return {getResort: (resortName) => {dispatch(getResort(resortName))},
         getReviews: (resortName) => {dispatch(getReviews(resortName))},
-        saveResort: (userId, resortId, type) => {dispatch(saveResort(userId, resortId, type))}
+        saveResort: (userId, resortId, type) => {dispatch(saveResort(userId, resortId, type))},
+        deleteSavedResort: (savedResortId) => {dispatch(deleteSavedResort(savedResortId))}
     }
 }
 
 function mapStateToProps(state){
     return {currentResort: state.resortsReducer.currentResort,
     reviews: state.reviewsReducer.reviews,
-    currentUser: state.userReducer.currentUser}
+    currentUser: state.userReducer.currentUser,
+    loggedIn: state.userReducer.loggedIn
+
+}
 }
   
   export default connect(mapStateToProps, mapDispatchToProps) (ResortPage) 

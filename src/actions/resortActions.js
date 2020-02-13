@@ -34,7 +34,6 @@ export function getResort(name) {
 
 export function saveResort(userId, resortId, type) {
   return (dispatch) => {
-    console.log(userId, resortId, type)
     dispatch({ type: 'LOADING_RESORT' });
     fetch(`${API_ROOT}saved_resorts/`, {
       method: "POST",
@@ -43,9 +42,23 @@ export function saveResort(userId, resortId, type) {
     })
       .then(response => response.json())
       .then(resort => { 
-        dispatch({ type: 'GET_RESORT', currentResort: resort, saveType: type})});
+        dispatch({ type: 'GET_RESORT', currentResort: resort})});
   };
 }
+
+export function deleteSavedResort(savedResortId) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_RESORT' });
+    fetch(`${API_ROOT}saved_resorts/${savedResortId}`, {
+      method: "DELETE",
+      headers: headers
+    })
+      .then(response => response.json())
+      .then(resort => { 
+        dispatch({ type: 'GET_RESORT', currentResort: resort})});
+  };
+}
+
 
 export function getSavedResorts(userId, type) { 
   return (dispatch) => {
@@ -54,6 +67,6 @@ export function getSavedResorts(userId, type) {
       headers: headers})
       .then(response => response.json())
       .then(resorts => { 
-        dispatch({ type: 'GET_SAVED_RESORTS', savedResorts: resorts.data })});
+        dispatch({ type: 'GET_SAVED_RESORTS', savedResorts: resorts.data, saveType: type })});
   };
 }

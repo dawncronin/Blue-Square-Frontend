@@ -1,36 +1,37 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {getSavedResorts} from "../actions/resortActions"
-import ResortsList from "../containers/resortsList"
+import SavedResortsList from "../containers/savedResortsList"
 import {getCurrentUser} from '../actions/userActions'
 
 
 class WannaGo extends Component {
 
-    componentDidMount() {
-        if (this.props.currentUser.id && this.props.type !== "wannaGo") {
+    componentWillMount() {
+        console.log(this.props)
+        if (this.props.currentUser.id) {
             this.props.getSavedResorts(this.props.currentUser.id, "wannaGo")
         }
     }
 
-
-    componentDidUpdate() {
-        if (this.props.currentUser.id && this.props.type !== "wannaGo") {
+    componentDidUpdate(prevProps) {
+        if (prevProps.saveType !== "wannaGo" && this.props.currentUser.id) {
             this.props.getSavedResorts(this.props.currentUser.id, "wannaGo")
         }
-      
     }
-
 
     render() {
         return (
             <div className="wannaGo">
             {this.props.resorts !== "nothing" ? (
                 <div>
-                    <ResortsList filteredResorts={this.props.resorts || []}/>
+                    <SavedResortsList filteredResorts={this.props.resorts || []}/>
             </div> ) : (
-                <div> loading... </div>
+                <div className="noSavedResorts"> No Resorts Saved!</div>
             )}
+            
+                     <div className="footer"></div>
+
              </div>
         )
     }
@@ -46,7 +47,7 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state){
     return {currentUser: state.userReducer.currentUser,
     resorts: state.resortsReducer.savedResorts,
-    type: state.resortsReducer.saveType
+    saveType: state.resortsReducer.saveType
 }
 }
    

@@ -18,9 +18,16 @@ export function postUser(username, password, password_confirmation) { // Signup 
       }})})
       .then(response => response.json())
       .then(user => { 
-        localStorage.setItem('token', user.jwt ); //set token
-        dispatch({ type: 'LOGIN', currentUser: user })});
-  };
+        console.log(user)
+        if (!user.error) {
+          localStorage.setItem('token', user.jwt );  //set token
+          dispatch({ type: 'LOGIN', currentUser: user })
+        }
+        else {
+          dispatch({type: "INVALIDLOGIN"})
+        }
+      })
+  }
 }
 
 export function login(username, password) {
@@ -33,8 +40,15 @@ export function login(username, password) {
       }})})
       .then(response => response.json())
       .then(user => { 
-        localStorage.setItem('token', user.jwt );  //set token
-        dispatch({ type: 'LOGIN', currentUser: user })});
+        if (!user.error) {
+          localStorage.setItem('token', user.jwt );  //set token
+          dispatch({ type: 'LOGIN', currentUser: user })
+        }
+        else {
+          dispatch({type: "INVALIDLOGIN"})
+        }
+        
+        });
   };
 }
 

@@ -2,52 +2,33 @@ import React from 'react';
 import {logout} from '../actions/userActions'
 import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom';
-import logo from "../BlueSquare.png"
+import logo from "../BlueSquare.jpg"
 
 function Navbar(props) {
-
     const handleOnClick = () => { 
         props.logout()
     }
 
     return (
-        <nav className="nav">
-            <ul>
+            <div className="nav">
                 {!props.currentUser.id? ( 
-                    
-                <div className="navitems">
-                        <NavLink to="/"><img src={logo} height={40} /></NavLink>
-
-                <li>
-                    <NavLink to="/resorts">Resorts</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/signup">Signup</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/login">Login</NavLink>
-                </li>
-                </div>
-                 ) : (
-                <div className="navitems">
-                     <NavLink to="/"><img src={logo} height={40} /></NavLink>
-
-                <li>
-                    <NavLink to="/resorts">Resorts</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/wannaGo">Wanna Go</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/pastTrips">Past Trips</NavLink>
-                </li>
-                <li >
-                    <NavLink  className="logout" to="/" onClick={handleOnClick}>Logout</NavLink>
-                </li>
+                    <div className="navbar">
+                       <NavLink id="navLogo" to="/"> <img id="logo" src={logo} alt="logo" /> </NavLink>
+                       <div id="navResorts"> <NavLink to="/resorts">Resorts</NavLink> </div>
+                       <div id="navSignup"> <NavLink to="/signup">Signup</NavLink> </div>
+                       <div id="navLogin"> <NavLink to="/login">Login</NavLink> </div>
+                    </div>
+                ) : 
+                (
+                    <div className="navbar">
+                    <NavLink id="navLogo" to="/"><img id="logo" src={logo}  alt="logo"/></NavLink>
+                    <div id="navResorts"> <NavLink to="/resorts">Resorts</NavLink> </div>
+                    <div id="navWannaGo"> <NavLink to="/wannaGo">Wanna Go</NavLink> </div>
+                    <div id="navPastTrips"> <NavLink to="/pastTrips">Past Trips</NavLink> </div>
+                    <div id="navLogout"> <NavLink  className="logout" to="/" onClick={handleOnClick}>Logout</NavLink> </div>
                 </div>
                 )}
-            </ul>
-        </nav>
+        </div>
     )
 }
    

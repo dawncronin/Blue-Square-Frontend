@@ -1,4 +1,4 @@
-const userReducer = (state = { currentUser: {}, loading: false , loggedIn: false}, action) => {
+const userReducer = (state = { currentUser: {}, loading: false , loggedIn: false, error: false}, action) => {
     switch(action.type) {
       case 'LOADING_USER':
         return {
@@ -12,7 +12,15 @@ const userReducer = (state = { currentUser: {}, loading: false , loggedIn: false
           ...state,
           currentUser: action.currentUser.user.data,
           loading: false,
-          loggedIn: true
+          loggedIn: true,
+          error: false
+        }
+      case 'INVALIDLOGIN':
+          return {
+            ...state,
+            error: true,
+            loading: false,
+            loggedIn: false
         }
       case "LOGOUT":
         return {

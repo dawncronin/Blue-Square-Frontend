@@ -14,7 +14,7 @@ function FeaturedResort(props) {
         {props.resort? (
         <div className="featuredResort">
             <div  >
-            <img src={props.resort.attributes.photo.photo_url} width="100%"/>
+            <img src={props.resort.attributes.photo.photo_url} width="100%" alt="Featured Resort"/>
             </div >
          <div id="featuredName">Featured Resort: {props.resort.attributes.name} </div>
         

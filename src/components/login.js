@@ -7,11 +7,16 @@ class Login extends Component {
     constructor() {
         super();
         this.state= {
-            error: false,
             fields: {
                 username:'',
                 password:''
             }
+        }
+    }
+
+    componentDidMount() {
+        if (this.props.loggedIn) {
+            this.props.history.push('/');
         }
     }
     handleChange = e => {
@@ -22,8 +27,14 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.login(this.state.fields.username, this.state.fields.password)
-        this.props.history.push('/');
+
       };
+
+    componentDidUpdate() {
+        if (this.props.loggedIn) {
+            this.props.history.push('/');
+        }
+    }
 
     render() {
     return (
@@ -31,7 +42,7 @@ class Login extends Component {
         <div className="login">
             <br/>
             <h2> Login</h2>
-            {this.state.error ? <h4>Invalid Username or Password, Try Again</h4> : null}
+            {this.props.error ? <h4>Invalid Username or Password, Try Again</h4> : null}
             <form className="loginForm" onSubmit={this.handleSubmit}>
                 <label> 
                 <input type="text" name="username" placeholder="username" onChange={this.handleChange}/>
@@ -52,7 +63,10 @@ function mapDispatchToProps(dispatch){
   }
    
   function mapStateToProps(state){
-    return {currentUser: state.currentUser}
+    return {currentUser: state.userReducer.currentUser,
+        error: state.userReducer.error,
+        loggedIn: state.userReducer.loggedIn
+    }
   }
    
 

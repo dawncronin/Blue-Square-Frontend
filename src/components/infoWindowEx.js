@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
+import {InfoWindow} from 'google-maps-react';
 import ReactDOM from 'react-dom';
 
 

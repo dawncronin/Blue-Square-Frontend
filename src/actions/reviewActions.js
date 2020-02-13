@@ -32,6 +32,11 @@ export function getReviews(resortName) {
       }).then(response => response.json())
       .then(reviews => { 
         console.log(reviews)
+        if (!reviews.error) {
           dispatch({ type: 'GET_REVIEWS', reviews: reviews.data })
+        }
+        else {
+          dispatch({ type: 'INVALID_REVIEW', reviews: reviews.data.data})
+        }
         })  
   }}

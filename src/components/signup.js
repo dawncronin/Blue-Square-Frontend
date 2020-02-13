@@ -5,13 +5,18 @@ class Signup extends Component {
     constructor() {
         super();
         this.state= {
-            error: false,
             fields: {
                 username:'',
                 password:'',
                 passwordConfirmation:'',
                 email: ''
             }
+        }
+    }
+
+    componentDidMount() {
+        if (this.props.loggedIn) {
+            this.props.history.push('/');
         }
     }
 
@@ -23,28 +28,26 @@ class Signup extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.postUser(this.state.fields.username, this.state.fields.password, this.state.fields.passwordConfirmation)
-        this.props.history.push('/');
       };
+
+      componentDidUpdate() {
+        if (this.props.loggedIn) {
+            this.props.history.push('/');
+        }
+    }
+
 
     render() {
         return (
             <div className="signupPage">
             <div className="signup">
                 <h2> Sign Up</h2>
-                {this.state.error ? <h3>Invalid Inputs, try again</h3> : null}
+                {this.props.error ? <h3>Invalid Inputs, try again</h3> : null}
                 <form className="signUpForm" onSubmit={this.handleSubmit}>
                     <label> 
                     <input type="text" name="username" placeholder="username" onChange={this.handleChange}/>
                     </label> <br/>
                     <input type="text" name="email" placeholder="email" onChange={this.handleChange}/>
-                    {/* <label> Ski/Board Level:
-                    <select  name="level" placeholder="level" onChange={this.handleChange}>
-                        <option value="begineer">Begineer</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                        <option value="expert">Expert</option>
-                    </ select> */}
-                    {/* </label> <br/> */}
                     <label> 
                     <input type="password" name="password" placeholder="password" onChange={this.handleChange}/> 
                     </label> <br/>
@@ -64,7 +67,10 @@ function mapDispatchToProps(dispatch){
   }
    
   function mapStateToProps(state){
-    return {currentUser: state.currentUser}
+    return {currentUser: state.userReducer.currentUser,
+        error: state.userReducer.error,
+        loggedIn: state.userReducer.loggedIn
+    }
   }
    
 

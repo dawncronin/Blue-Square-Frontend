@@ -20,13 +20,16 @@ class AddReview extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.postReview(this.props.currentResort.resort.data.id, this.props.currentUser.id, this.state.fields.text, this.state.fields.rating)
-      };
+        this.setState({text: ""})
+    };
 
     render() {
         return (
             <div className="addReview">
                 {!this.props.currentResort.resort? ("loading..." ) : (
-                <form onSubmit={this.handleSubmit}> Add your review of {this.props.currentResort.resort.data.attributes.name}: <br/>
+                <form onSubmit={this.handleSubmit}> 
+                {this.props.error?  "Invalid Review!"  : "" }
+                Add your review of {this.props.currentResort.resort.data.attributes.name}: <br/>
                     <select id="rating" name="rating" onChange={this.handleChange}>
                         <option value="1"> One Star</option>
                         <option value="2"> Two Star</option>
@@ -50,7 +53,9 @@ function mapDispatchToProps(dispatch){
    
   function mapStateToProps(state){
     return {currentUser: state.userReducer.currentUser,
-    currentResort: state.resortsReducer.currentResort}
+    currentResort: state.resortsReducer.currentResort,
+    error: state.reviewsReducer.error
+}
   }
    
 

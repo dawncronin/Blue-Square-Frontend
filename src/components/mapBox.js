@@ -1,16 +1,8 @@
 import React, {Component} from 'react';
-// import {connect} from 'react-redux'
-// import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api'
 import googleMapsKey from "../secrets.js"
-// import { Marker } from '@react-google-maps/api';
-// import { render } from '@testing-library/react';
-// import { NavLink } from 'react-router-dom';
 import InfoWindowEx from "../components/infoWindowEx"
 import { useHistory } from 'react-router-dom';
-
-
-
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
 
 class MapBox extends Component {
@@ -69,13 +61,13 @@ class MapBox extends Component {
         zoom={4} 
         style={{
           width: "100%",
-          height: "87%"
+          height: "90%"
         }}
         containerStyle={{
           position: 'fixed',  
           width: '45%',
           height: '100%',
-          top: "120px"
+          top: "10%"
         }}
         initialCenter={{lat: this.state.centerLat, lng: this.state.centerLong}}
         >
@@ -101,12 +93,7 @@ class MapBox extends Component {
       </div>
     )
   }
-}
-   
-function mapStateToProps(state){
-    return {resorts: state.currentUser}
-}
-   
+} 
 
 export default GoogleApiWrapper({
   apiKey: googleMapsKey

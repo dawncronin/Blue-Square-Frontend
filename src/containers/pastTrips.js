@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {getSavedResorts} from "../actions/resortActions"
-import ResortsList from "../containers/resortsList"
+import SavedResortsList from "../containers/savedResortsList"
 import {getCurrentUser} from '../actions/userActions'
 
 
 class PastTrips extends Component{
 
-    componentDidMount() {
-        if (this.props.currentUser.id && this.props.type !== "pastTrips") {
+    componentWillMount() {
+        console.log(this.props)
+        if (this.props.currentUser.id) {
             this.props.getSavedResorts(this.props.currentUser.id, "pastTrip")
         }
     }
 
-    componentDidUpdate() {
-        if (this.props.currentUser.id && this.props.type !== "pastTrip") {
+    componentDidUpdate(prevProps) {
+        if (prevProps.saveType !== "pastTrip" && this.props.currentUser.id) {
             this.props.getSavedResorts(this.props.currentUser.id, "pastTrip")
         }
-      
     }
 
 
@@ -26,10 +26,12 @@ class PastTrips extends Component{
             <div className="pastTrips">
             {this.props.resorts !== "nothing" ? (
                 <div>
-                    <ResortsList filteredResorts={this.props.resorts || []}/>
+                    <SavedResortsList filteredResorts={this.props.resorts || []}/>
             </div> ) : (
-                <div> loading... </div>
+                <div className="noSavedResorts"> </div>
             )}
+
+                     <div className="footer"></div>
              </div>
         )
     }
@@ -47,5 +49,4 @@ function mapStateToProps(state){
     resorts: state.resortsReducer.savedResorts}
 }
    
-
 export default connect(mapStateToProps, mapDispatchToProps)(PastTrips)
