@@ -66,7 +66,6 @@ code {
 font-weight: 700;
  text-decoration: none;
  color: #f9f9fd;
- text-shadow: 1px 1px #6a696d;
 } 
 
 a{
@@ -87,7 +86,7 @@ grid-template-columns: 15% 40% 45%;
 
 .filter {
   position: fixed;
-  top: 160px;
+  top: 140px;
   width: 14%;
   grid-row-start: 2;
   grid-row-end: -1;
@@ -359,7 +358,7 @@ textarea {
  .about {
    background-color: white;
    display: inline-block;
-   width: 50%;
+   width: 60%;
    font-size: 14pt;
    border-radius: 3px;
    padding-top: 10px;
@@ -386,7 +385,7 @@ textarea {
 
  #resortCardName {
    position: relative;
-   padding: 5px;
+   padding: 10px;
    font-weight: bold;
    font-size: 22px;
  }
@@ -417,7 +416,7 @@ textarea {
    font-weight: bold;
    border-radius: 2px;
    background-color: rgb(56, 54, 54, .5);
-   width: 97.8%;
+   width: 97.4%;
    position: absolute;
    bottom: 2px;
    padding: 20px;
@@ -486,6 +485,7 @@ textarea {
  }
 
  #summit {
+   padding-bottom: 10px;
   text-align: center;
   grid-row: 6;
   grid-column: 2 / 4;
@@ -605,7 +605,7 @@ input[type=range] {
   width: 80%;
 }
 
-#resortCardText {
+#resortCardText, #resortCardParams{
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -666,6 +666,8 @@ input[type=range] {
 }
 
 .savedResortList{
+  /* height: 100%; */
+  margin-bottom: 200px;
   text-align: center;
   width: 100%;
 }
@@ -710,5 +712,20 @@ input[type=range] {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
+.icon {
+  padding-right: 20px;
+  display: inline-block;
+  text-align: bottom;
+}
+
+#mountain{
+  object-fit: cover;
+  object-position: 20% 10px; 
+}
+
+#snowflake{
+  object-fit: cover;
+  object-position: 20% 5px; 
 }

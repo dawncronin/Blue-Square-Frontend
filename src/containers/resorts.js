@@ -87,10 +87,10 @@ class Resorts extends Component {
             else if (difLong > 5 || difLong > 5) {
                 zoom = 6
             }
-            else if (difLong > 4 || difLong > 4) {
+            else if (difLong > 1 || difLong > 1) {
                 zoom = 7
             }
-            else if (difLong > 1 || difLong > 1) {
+            else if (difLong > .5 || difLong > .5) {
                 zoom = 7
             }
             else if (difLong > 0.01) {
@@ -164,7 +164,8 @@ class Resorts extends Component {
                 break
             } 
         }
-        this.setState({filteredResorts: sorted})
+        this.setState({filteredResorts: sorted,
+        sort: value})
     }
 
     render() {
@@ -172,7 +173,9 @@ class Resorts extends Component {
     return (
         <div className="resorts"> 
         <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
-        <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} />
+        <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} 
+        sort={this.state.sort}
+        />
         <MapBox filteredResorts={this.state.filteredResorts} 
             centerLat={this.state.centerLat} 
             centerLong={this.state.centerLong} 

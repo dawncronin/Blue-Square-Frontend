@@ -2,9 +2,54 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { Doughnut } from 'react-chartjs-2';
 import location from "../location.png"
+import snowflake from "../snowflake.png"
+import vertical from "../vertical.png"
+import terrain from "../snowboard.png"
+import mountain from "../mountain.png"
+import runs from "../runs.png"
+import lifts from "../lifts.png"
+import star from "../star.png"
 
 
 function ResortBox(props) { 
+
+    let stars = () => {
+        if (props.rating < 1) {
+            return ""
+        }
+        else if (props.rating < 1.5){
+            return <div className="star"> <img src={star} height={25} alt="star"/></div>
+        }
+        else if (props.rating < 2.5) {
+            return <div className="star" > <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+            </div>
+        }
+        else if (props.rating < 3.5) {
+            return <div className="star"> <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+            </div>
+        }
+        else if (props.rating < 4.5) {
+            return <div className="star"> <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+            </div>
+        }
+        else if (props.rating < 6) {
+            return <div className="star"> <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+             <img src={star} height={25} alt="star"/>
+
+            </div>
+        }
+
+    }
+
 
     return (
         <div >
@@ -18,7 +63,7 @@ function ResortBox(props) {
 
          <div className="resortImageText">
              <div className="fuckcss"> 
-         <h1 id="resortBoxTitle">{props.resort.attributes.name} </h1>
+         <h1 id="resortBoxTitle">{props.resort.attributes.name}  {stars()}</h1>
          <a  id="visit" target="_blank" href={props.resort.attributes.link}> Visit Website </a>
          <p id="location"> <img src={location} alt="" height="30px"/> {props.resort.attributes.state}, {props.resort.attributes.region} </p>
          
@@ -54,22 +99,22 @@ function ResortBox(props) {
 
          <p id="desc">{props.resort.attributes.long_desc}</p>
 
-         <p id="runs"> Runs: {props.resort.attributes.runs}</p>
+         <p id="runs"> {<img className="icon" src={runs} alt="" height="40px"/>} Runs: {props.resort.attributes.runs}</p>
 
-         <p id="lifts"> Lifts: {props.resort.attributes.lifts} </p>
+         <p id="lifts"> {<img  className="icon"src={lifts} alt="" height="40px"/>} Lifts: {props.resort.attributes.lifts} </p>
 
          <p id="price"> Daily Price: ${props.resort.attributes.price} </p>
 
          <p id ="acres"> Skiable Acres: {props.resort.attributes.acres}</p>
 
-         <p id="snow"> Yearly Snowfall: {props.resort.attributes.snowfall} in </p>
+         <p id="snow"> {<img  className="icon"src={snowflake} id="snowflake"  alt="" height="40px"/>} Yearly Snowfall: {props.resort.attributes.snowfall} in </p>
 
-         <p id="vertical"> Vertical Drop: {props.resort.attributes.vertical} ft</p>
+         <p id="vertical"> {<img className="icon" src={vertical}  id="height"alt="" height="35px"/>}    Vertical Drop: {props.resort.attributes.vertical} ft</p>
 
-         <p id="summit"> Summit Height: {props.resort.attributes.summit} ft</p>
+         <p id="summit"> {<img className="icon" id="mountain" src={mountain} alt="" height="50px"/>} Summit Height: {props.resort.attributes.summit} ft</p>
 
 
-         <p id="terrain"> {props.resort.attributes.terrain_parks} Terrain Parks</p>
+         <p id="terrain"> {<img className="icon" src={terrain} alt="" height="40px"/>} {props.resort.attributes.terrain_parks} Terrain Parks</p>
 
          <p id="open"> Opening Date: {props.resort.attributes.open_date}</p>  
         <p id="close">  Closing Date: {props.resort.attributes.close_date}</p>

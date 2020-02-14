@@ -15,7 +15,8 @@ class ResortPage extends Component {
         this.state = {
             saveResort: "",
             saved: "",
-            saveId: ""
+            saveId: "",
+            rating: ""
         }
     }
 
@@ -36,6 +37,15 @@ class ResortPage extends Component {
                saved = saved.attributes.save_type
            }
            this.setState({saved: saved})
+        }
+        if (prevProps.reviews !== this.props.reviews) {
+            
+            let ratings = this.props.reviews.map(review => review.attributes.rating)
+
+            let rating = ratings.reduce((a, b) => a + b , 0)/ (ratings.length)
+
+            this.setState({rating: rating})
+            
         }
     }
 
@@ -67,6 +77,7 @@ class ResortPage extends Component {
                     onSelection={this.onSelection}
                     saved={this.state.saved}
                     loggedIn={this.props.loggedIn}
+                    rating={this.state.rating}
                     />
                ) : ( "loading" ) }
                </div>
