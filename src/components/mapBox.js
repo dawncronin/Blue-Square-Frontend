@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import googleMapsKey from "../secrets.js"
+// import googleMapsKey from "../secrets.js"
 import InfoWindowEx from "../components/infoWindowEx"
 import { useHistory } from 'react-router-dom';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
@@ -95,5 +95,5 @@ class MapBox extends Component {
 } 
 
 export default GoogleApiWrapper({
-  apiKey: googleMapsKey
+  apiKey: process.env.REACT_APP_GOOGLE_MAPS
 })(MapBox);
