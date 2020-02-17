@@ -1,6 +1,9 @@
 {
   "name": "blue-square",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.13.0"
+  },
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^1.8.2",
