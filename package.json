@@ -30,6 +30,7 @@
     "save-dev": "0.0.1-security"
   },
   "scripts": {
+    "deploy": "serve -s build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
