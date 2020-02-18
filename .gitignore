@@ -14,7 +14,7 @@
 secrets.js
 
 #ignore dotenv
-.env
+# .env
 # misc
 .DS_Store
 .env.local
