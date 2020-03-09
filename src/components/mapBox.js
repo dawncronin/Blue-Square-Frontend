@@ -50,6 +50,7 @@ class MapBox extends Component {
   }
 
   render() {
+    console.log(this.props)
     let slug =  this.state.selectedPlace.resort? this.state.selectedPlace.resort.attributes.name.split(" ").join("_") : ""
 
     return (
