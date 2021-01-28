@@ -28,10 +28,14 @@ class App extends Component {
   }
 
 render() {
+  let optionalNavClass="3"
+  if (window.location.pathname !=='/') {
+    optionalNavClass = "not-home-nav"
+  }
+  console.log(optionalNavClass)
   return (
     <Router>
     <div className="app">
-      <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/login"  component={Login}/>
       <Route exact path="/signup" component={Signup}/>

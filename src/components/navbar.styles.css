@@ -1,0 +1,41 @@
+.nav-bar ul{
+  list-style-type: none;
+}
+
+.nav-bar li {
+  display: inline-block;
+  margin: 20px;
+  float: right;
+  font-size: 120%;
+}
+
+.nav-bar a:link,
+.nav-bar a:visited{
+  color:#fff;
+  transition: color 0.2s;
+}
+
+.nav-bar a:hover,
+.nav-bar a:active{
+  color:#aaa;
+}
+
+.not-home-nav {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+}
+.not-home-nav .nav-bar li a{
+  color: black;
+  /* position: absolute; */
+
+}
+
+.logo {
+  margin: 20px;
+  display: inline-block;
+  float: left;
+  font-size: 150%;
+  color: #0652DD;
+  text-transform: uppercase;
+}

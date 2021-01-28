@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {postUser} from '../actions/userActions'
 import {connect} from 'react-redux'
+import Navbar from './navbar'
+
 class Signup extends Component {
     constructor() {
         super();
@@ -40,6 +42,7 @@ class Signup extends Component {
     render() {
         return (
             <div className="signupPage">
+            <Navbar/>
             <div className="signup">
                 <h2> Sign Up</h2>
                 {this.props.error ? <h3>Invalid Inputs, try again</h3> : null}

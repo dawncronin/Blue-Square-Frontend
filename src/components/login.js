@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {login} from '../actions/userActions'
 import {connect} from 'react-redux'
+import Navbar from './navbar'
 
 
 class Login extends Component {
@@ -39,6 +40,7 @@ class Login extends Component {
     render() {
     return (
         <div className="loginPage">
+                  <Navbar optionalClass="not-home-nav"/>
         <div className="login">
             <br/>
             <h2> Login</h2>

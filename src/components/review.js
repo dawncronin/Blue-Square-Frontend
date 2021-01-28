@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import star from "../star.png"
+import star from "../img/star.png"
 
 function Review(props) {
 

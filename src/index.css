@@ -1,77 +1,45 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+ /*
+#0652DD main
+#0546bc darker
+#2e76f9 lighter
+#010f27 very dark
+#e3edfe very light
+#021538
+https://www.0to255.com/0652dd
+ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Montserrat', sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(234, 234, 250) ;
-  margin-left: 0px;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
-  height: 100%;
-  padding-bottom: 150px;
+  /* overflow-x: hidden; */
+  /* height: 100%; */
+  /* padding-bottom: 150px; */
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.nav {
-  font-weight: 30px;
-  right: 0;
-  left: 0;
-  top: 0;
-  position: fixed;
-  height: 100px;
-  background-image: url("https://i.imgur.com/uomufXt.jpg");
-  background-position: bottom;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  z-index: 500;
-  box-shadow: 2px 5px 5px -2px rgba(0,0,0,.2);
-} 
- 
-.navbar {
-  position: fixed;
-  height: 5%;
-  font-size: 14pt;
-  align-items: center;
-  justify-items: center;
-  top: -20px;
-  right: 0px;
-  left: 0px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 20% 10% 10% 10% 10% 10% 10% 10% 10%;
-}
-
-#navLogo{
-  text-align: left;
-  grid-column: 1;
-  border-radius: 4px;
-  height: 50%
-}
-
-#navLogout {
-
-  grid-column:9
-}
-#logo {
-  height: 50%;
-  border-radius: 4px;
-}
-.nav a {
-font-weight: 700;
- text-decoration: none;
- color: #f9f9fd;
-} 
 
 a{
   text-decoration: none;
   color: rgb(20, 20, 20);
 }
+
+/*
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#logo {
+  height: 50%;
+  border-radius: 4px;
+}
+
 
 a:hover {
   color: gray;
@@ -132,7 +100,7 @@ grid-template-columns: 15% 40% 45%;
 
 .mapBox{
   grid-column: 3;
-  /* margin-right: 100px; */
+   margin-right: 100px; 
 }
 
 .wannaGo {
@@ -317,7 +285,7 @@ textarea {
   color: #444;
   margin-top: 10px;
   margin-left: 10px;
-  /* padding: .6em 1em .5em .8em; */
+  padding: .6em 1em .5em .8em; 
   width: 100px;
   max-width: 100%; 
   box-sizing: border-box;
@@ -328,16 +296,16 @@ textarea {
 }
 
 .reviewSection {
-  /* background-color: rgb(212, 231, 245); */
-  /* margin: 10px; */
+   background-color: rgb(212, 231, 245); 
+  /margin: 10px; 
   text-align: center;
   padding: 10px;
   background-color: white;
 }
 
 .rightColumn {
-  /* background-color: rgb(212, 231, 245); */
-  /* margin: 10px; */
+   background-color: rgb(212, 231, 245); 
+   margin: 10px; 
   padding: 10px;
   box-shadow: 2px 5px 5px 5px rgba(0,0,.2,.2);
 
@@ -376,8 +344,8 @@ textarea {
   vertical-align: middle;
    max-height: 300px;
    width: 100%;
-   /* max-width: 100%;
-   height: 300px; */
+   max-width: 100%;
+   height: 300px; 
    border-radius: 3px;
    border-bottom-right-radius: 0;
    border-bottom-left-radius: 0;
@@ -586,7 +554,7 @@ textarea {
   font-weight: 700;
   color: #444;
   margin-top: 10px;
-  /* padding: .6em 1em .5em .8em; */
+  padding: .6em 1em .5em .8em;
   width: 70px;
   max-width: 100%; 
   box-sizing: border-box;
@@ -666,7 +634,7 @@ input[type=range] {
 }
 
 .savedResortList{
-  /* height: 100%; */
+   height: 100%; 
   margin-bottom: 200px;
   text-align: center;
   width: 100%;
@@ -728,4 +696,4 @@ input[type=range] {
 #snowflake{
   object-fit: cover;
   object-position: 20% 5px; 
-}
+} */

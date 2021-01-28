@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import Filter from "../components/filter"
 import MapBox from "../components/mapBox"
 import ResortsList from "../containers/resortsList"
+import Navbar from '../components/navbar'
+
 
 class Resorts extends Component {
     constructor(props) {
@@ -172,6 +174,8 @@ class Resorts extends Component {
 
     return (
         <div className="resorts"> 
+        < Navbar optionalClass="not-home-nav"/>
+
         <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
         <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} 
         sort={this.state.sort}

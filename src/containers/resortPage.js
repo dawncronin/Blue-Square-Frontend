@@ -4,6 +4,8 @@ import {getResort} from "../actions/resortActions"
 import {getReviews} from "../actions/reviewActions"
 import {saveResort} from "../actions/resortActions"
 import {deleteSavedResort} from "../actions/resortActions"
+import Navbar from '../components/navbar'
+
 
 import AddReview from "../components/addReview"
 import ReviewList from "../containers/reviewList"
@@ -66,6 +68,7 @@ class ResortPage extends Component {
 
         return (
             <div className="resortPage">
+                <Navbar optionalClass="not-home-nav"/>
 
                 <div className="resortBoxCont" >
 

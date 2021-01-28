@@ -1,0 +1,43 @@
+header {
+  height: 100vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)) , url(../img/skigirl.jpg);
+}
+
+
+.text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    width: 80%;
+    text-align: center;
+    word-spacing: 3px;
+  }
+  
+  .text-box h1{
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 250%;
+  }
+  
+  
+  .btn:link, .btn:visited {
+    font-weight: 500;
+    display: inline-block;
+    background-color:#0652DD;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 50px;
+    font-size: 110%;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .btn:active, .btn:hover {
+    background-color: #0546bc;
+    transform: scale(1.05);
+  
+  }

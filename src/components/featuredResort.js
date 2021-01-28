@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom';
 
+import './featuredResort.styles.css'
+
 
 function FeaturedResort(props) {
 
@@ -10,7 +12,7 @@ function FeaturedResort(props) {
 
     return (
         <div>
-        <NavLink to={`/resorts/${slug}`}>
+        {/* <NavLink to={`/resorts/${slug}`}>
         {props.resort? (
         <div className="featuredResort">
             <div  >
@@ -22,7 +24,7 @@ function FeaturedResort(props) {
          ) : ( 
              "loading..."
          )}
-         </NavLink>
+         </NavLink> */}
          </div>
     )
 }

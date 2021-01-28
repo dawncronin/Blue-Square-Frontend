@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {getSavedResorts} from "../actions/resortActions"
 import SavedResortsList from "../containers/savedResortsList"
 import {getCurrentUser} from '../actions/userActions'
+import Navbar from '../components/navbar'
+
 
 
 class WannaGo extends Component {
@@ -23,6 +25,7 @@ class WannaGo extends Component {
     render() {
         return (
             <div className="wannaGo">
+                < Navbar />
             {this.props.resorts !== "nothing" ? (
                 <div>
                     <SavedResortsList filteredResorts={this.props.resorts || []}/>

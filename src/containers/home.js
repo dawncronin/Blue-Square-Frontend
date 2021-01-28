@@ -1,18 +1,26 @@
 import React from 'react'
 import FeaturedResort from "../components/featuredResort"
+import { NavLink } from 'react-router-dom';
+import Navbar from '../components/navbar'
 
+import './home.style.css'
 
-
-function Home(props) {
+function Home() {
 
     return(
         <div className="home">
+            <header>
+                <Navbar />
+        <div className="text-box">
+            <h1>Plan your next mountain adventure.</h1>
+                <NavLink className="btn" to="/resorts">Get Started</NavLink>
+                <a className="btn" href="#">Learn More</a>
+        </div>
+        </header>
 
             <FeaturedResort />
 
-
-
-            <div className="about">
+            {/* <div className="about">
             <h3> About Blue Square</h3>
             <div> Blue Square is inspired by my love of skiing and community.
  
@@ -27,7 +35,7 @@ function Home(props) {
                 No one says "blue square" the way people say "black diamond", so here is an homage to the intermediate runs!    
 
                  </div>
-            </div>
+            </div> */}
             <div className="footer"></div>
         </div>
     )

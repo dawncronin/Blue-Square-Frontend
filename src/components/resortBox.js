@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import { Doughnut } from 'react-chartjs-2';
-import location from "../location.png"
-import snowflake from "../snowflake.png"
-import vertical from "../vertical.png"
-import terrain from "../snowboard.png"
-import mountain from "../mountain.png"
-import runs from "../runs.png"
-import lifts from "../lifts.png"
-import star from "../star.png"
+import location from "../img/location.png"
+import snowflake from "../img/snowflake.png"
+import vertical from "../img/vertical.png"
+import terrain from "../img/snowboard.png"
+import mountain from "../img/mountain.png"
+import runs from "../img/runs.png"
+import lifts from "../img/lifts.png"
+import star from "../img/star.png"
 
 
 function ResortBox(props) { 
