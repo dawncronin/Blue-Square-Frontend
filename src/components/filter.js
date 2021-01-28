@@ -24,15 +24,16 @@ export default class Filter extends Component {
             <div className="filter">
                 <h3> Filter Results:</h3>
 
-                <div className="price"> Daily Price:  Under ${this.state.price} <br/>
-                    <input type="range" name="price" min="50" max="220" step="10" value={this.state.price} onChange={this.handlePriceChange}/>
-                </div> 
-
-               
+                <div className="price"> <input type="range" name="price" min="50" max="220" step="10" value={this.state.price} onChange={this.handlePriceChange}/>
+                     <br/> Daily Price:  Under ${this.state.price} 
+                </div>
+                <div className="beginners"> 
+                    Great For Beginners: <input type="checkbox" name="beginners" value={true} onChange={e => {this.props.onBegineerChecked()}}/> 
+                </div>
 
                 <div className="region"> Region:
                     <select name="region" onChange={e => {this.props.onFilterChange({region: e.target.value})}}> 
-                            <option value="none">None</option>
+                            <option value="none">Select  &#8711;</option>
                         <option value="Sierra Nevadas">Sierra Nevadas</option>
                         <option value="Midwest">Midwest</option>
                         <option value="Northeast">Northeast</option>
@@ -43,21 +44,15 @@ export default class Filter extends Component {
 
                 <div className="pass"> Ski Pass:
                     <select name="skipass" onChange={e => {this.props.onFilterChange({skipass: e.target.value})}}> 
-                            <option value="none">None</option>
+                            <option value="none">Select &#8711;</option>
                         <option value="epic">Epic Pass</option>
                         <option value="ikon">Ikon Pass</option>
                     </select> 
                 </div>
 
-
-                <div className="begineers"> 
-                    Great For Begineers: <input type="checkbox" name="begineers" value={true} onChange={e => {this.props.onBegineerChecked()}}/> 
-                </div>
-                
-
                 <div className="sort">Sort Resorts:
                     <select name="sort" onChange={this.handleSortChange}> 
-                        <option value="none">None</option>
+                        <option value="none">Select &#8711;</option>
                        <option value="snowfall">Yearly Snowfall</option>
                        <option value="vertical">Vertical Drop</option>
                        <option value="summit">Summit Height</option>

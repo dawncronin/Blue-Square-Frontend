@@ -58,14 +58,17 @@ class MapBox extends Component {
         zoom={this.props.zoom} 
         style={{
           width: "100%",
-          height: "86%"
+          height: "100%"
         }}
         containerStyle={{
           position: 'fixed',
-          right: "0" ,
-          width: '45%',
-          height: '100%',
-          top: "14%"
+          right: "10px" ,
+          width: '50%',
+          height: '80vh',
+          top: "150px",
+          borderStyle: "solid",
+          borderWidth: "1px",
+          borderColor: "gray"
         }}
         // initialCenter={{lat: this.props.centerLat, lng: this.props.centerLong}}
         center={{lat: this.props.centerLat, lng: this.props.centerLong}}

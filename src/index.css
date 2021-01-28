@@ -45,63 +45,6 @@ a:hover {
   color: gray;
 }
 
-.resorts{
-  position: absolute;
-  top: 150px;
-display: grid ;
-grid-template-columns: 15% 40% 45%;
-}
-
-.filter {
-  position: fixed;
-  top: 140px;
-  width: 14%;
-  grid-row-start: 2;
-  grid-row-end: -1;
-  grid-column: 1;
-  text-align: center;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(187, 187, 187);
-  background-color: rgb(250, 248, 248);
-  border-radius: 1px;
-  margin: 10px;
-}
-
-.price, .region, .pass, .begineers {
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: rgb(187, 187, 187);
-  padding-top: 20px;
-  padding-bottom: 20px;
-   padding-left: 10px; 
-  padding-right: 10px;
-}
-
-.sort {
-  border-top-style: solid;
-  border-width: 1px;
-  border-color: rgb(187, 187, 187);
-  padding-top: 20px;
-  padding-bottom: 20px;
-   padding-left: 10px; 
-  padding-right: 10px;
-
-}
-
-
-.resortList{
-  overflow-y: hidden;
-  padding-left: 30px;
-  padding-right: 30px;
-
-}
-
-.mapBox{
-  grid-column: 3;
-   margin-right: 100px; 
-}
 
 .wannaGo {
   min-height: 85%;
@@ -122,22 +65,6 @@ grid-template-columns: 15% 40% 45%;
   right:200px;
   position: absolute;
   top: 160px;
-}
-
-.resortCard {
-  display: inline-block;
-  position: relative;
-  background-color: rgb(246, 246, 250);
-  border-color: rgb(219, 218, 218);
-  border-radius: 4px;
-  margin-top: 20px;
-  border-style: solid;
-  border-width: 1px;
-}
-
-.resortCard:hover {
-  background-color: rgb(221, 223, 235); 
-  color: black;
 }
 
 
@@ -316,13 +243,6 @@ textarea {
 }
 
 
-
- .home {
-   position: absolute;
-   top: 180px;
-   text-align: center;
- }
-
  .about {
    background-color: white;
    display: inline-block;
@@ -335,28 +255,6 @@ textarea {
    padding-left: 20px;
  }
 
- #resortCardPhoto {
-  text-align: center; 
-  box-shadow: 0px 3px 3px #b8b7b7;
- }
-
- #resortCardPhoto img {
-  vertical-align: middle;
-   max-height: 300px;
-   width: 100%;
-   max-width: 100%;
-   height: 300px; 
-   border-radius: 3px;
-   border-bottom-right-radius: 0;
-   border-bottom-left-radius: 0;
- }
-
- #resortCardName {
-   position: relative;
-   padding: 10px;
-   font-weight: bold;
-   font-size: 22px;
- }
 
  input[type=checkbox] {
    width: 16px;
@@ -395,7 +293,6 @@ textarea {
 
  .filterCotainer {
    grid-column: 1;
-
  }
 
  #visit {
@@ -573,10 +470,6 @@ input[type=range] {
   width: 80%;
 }
 
-#resortCardText, #resortCardParams{
-  padding-right: 10px;
-  padding-left: 10px;
-}
 
 .resortImageText {
   margin-top: 0;

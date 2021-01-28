@@ -5,6 +5,7 @@ import MapBox from "../components/mapBox"
 import ResortsList from "../containers/resortsList"
 import Navbar from '../components/navbar'
 
+import './resorts.style.css'
 
 class Resorts extends Component {
     constructor(props) {
@@ -173,19 +174,22 @@ class Resorts extends Component {
     render() {
 
     return (
-        <div className="resorts"> 
-        < Navbar optionalClass="not-home-nav"/>
+        <div>
+            < Navbar optionalClass="not-home-nav"/>
+            <div className="resorts"> 
 
-        <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
-        <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} 
-        sort={this.state.sort}
-        />
-        <MapBox filteredResorts={this.state.filteredResorts} 
-            centerLat={this.state.centerLat} 
-            centerLong={this.state.centerLong} 
-            zoom={this.state.zoom}
+            <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
+            <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} 
+            sort={this.state.sort}
             />
+            <MapBox filteredResorts={this.state.filteredResorts} 
+                centerLat={this.state.centerLat} 
+                centerLong={this.state.centerLong} 
+                zoom={this.state.zoom}
+                />
+            </div>
         </div>
+
     )
     }
 }
