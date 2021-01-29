@@ -1,0 +1,48 @@
+.resort-card {
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+    display: block;
+    position: relative;
+    background-color:#fff;
+    transition: background-color 0.5s, transform 0.3s;
+
+}
+
+.resort-card:hover {
+    transform: scale(1.03);
+    z-index: 10;
+}
+  
+.resort-card-photo {
+text-align: center; 
+}
+
+.resort-card-photo img {
+    vertical-align: middle;
+    width: 100%;
+    max-width: 500px;
+    height: 25vh;
+    /* border-radius: 3px; */
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+  
+.resort-card-name {
+    padding: 10px 0 0 10px;
+    color: #0652DD;
+    font-size: 150%;
+}
+
+.resort-card-text{
+    padding: 0 10px 10px 10px;
+    text-align: justify;
+    font-size: 80%
+  }
+
+.resort-card-params{
+    padding: 0 10px 10px 10px;
+    font-size: 90%;
+    color: #0652DD;
+}
+  

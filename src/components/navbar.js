@@ -2,7 +2,6 @@ import React from 'react';
 import {logout} from '../actions/userActions'
 import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom';
-import logo from "../img/BlueSquare.jpg"
 
 import './navbar.styles.css'
 
@@ -13,12 +12,10 @@ function Navbar(props) {
 
 
     return (
-        // <header>
             <nav className={`nav ${props.optionalClass}`}>
                 {!props.currentUser.id? ( 
-                    <div className='nav-bar' >
-                       {/* <NavLink id="navLogo" to="/"> <img id="logo" src={logo} alt="logo" /> </NavLink> */}
-                       <div class="logo"> &#10063; Blue Square</div>
+                    <div className='nav-bar' >                       
+                       <NavLink to="/"> <div className="logo"> &#10063; Blue Square</div></NavLink>
                        <ul>
                            <li >
                                 <NavLink to="/signup">Signup</NavLink>
@@ -34,8 +31,7 @@ function Navbar(props) {
                 ) : 
                 (
                     <div className="nav-bar">
-                    {/* <NavLink id="navLogo" to="/"> <img id="logo" src={logo} alt="logo" /> </NavLink> */}
-                    <div class="logo"> <span className="square">&#10066;</span> Blue Square</div>
+                       <NavLink to="/"> <div className="logo"> &#10063; Blue Square</div></NavLink>
                     <ul>
                         <li id="nav-element">
                             <NavLink  className="logout" to="/" onClick={handleOnClick}>Logout</NavLink>
@@ -54,12 +50,6 @@ function Navbar(props) {
                  </div>
                 )}
         </nav>
-        /* <div className="text-box">
-            <h1>Plan your next mountain adventure.</h1>
-                <NavLink className="btn" to="/resorts">Get Started</NavLink>
-                <a className="btn" href="#">Learn More</a>
-        </div> */
-    /* </header> */
     )
 }
    

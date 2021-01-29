@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './filter.styles.css'
+
 
 export default class Filter extends Component {
     constructor() {
@@ -33,7 +35,7 @@ export default class Filter extends Component {
 
                 <div className="region"> Region:
                     <select name="region" onChange={e => {this.props.onFilterChange({region: e.target.value})}}> 
-                            <option value="none">Select  &#8711;</option>
+                            <option value="none">None</option>
                         <option value="Sierra Nevadas">Sierra Nevadas</option>
                         <option value="Midwest">Midwest</option>
                         <option value="Northeast">Northeast</option>
@@ -44,7 +46,7 @@ export default class Filter extends Component {
 
                 <div className="pass"> Ski Pass:
                     <select name="skipass" onChange={e => {this.props.onFilterChange({skipass: e.target.value})}}> 
-                            <option value="none">Select &#8711;</option>
+                            <option value="none">None</option>
                         <option value="epic">Epic Pass</option>
                         <option value="ikon">Ikon Pass</option>
                     </select> 
@@ -52,7 +54,7 @@ export default class Filter extends Component {
 
                 <div className="sort">Sort Resorts:
                     <select name="sort" onChange={this.handleSortChange}> 
-                        <option value="none">Select &#8711;</option>
+                        <option value="none">None</option>
                        <option value="snowfall">Yearly Snowfall</option>
                        <option value="vertical">Vertical Drop</option>
                        <option value="summit">Summit Height</option>

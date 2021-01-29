@@ -1,0 +1,36 @@
+
+  @media (max-width: 740px) {
+    .map-box {
+        display: none;
+    }
+  }
+    
+  .map-info {
+    font-size: 90%;
+    text-align: justify;
+    width: 100%;
+  }
+
+  .map-info h4 {
+    font-size: 130%;
+    font-weight: 400;
+    color: #0652DD;
+    padding-bottom: 10px;
+  }
+
+
+
+
+  .info-btn:link, .info-btn:visited {
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    background-color: #0652DD;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    width: 30%;
+    margin-left: 35%;
+    transition: background-color 0.2s, transform 0.2s;
+  }

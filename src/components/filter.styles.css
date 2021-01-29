@@ -1,0 +1,55 @@
+.filter {
+    margin: 0;
+    position: fixed;
+    z-index: 100;
+    /* background-color: #e3edfe; */
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 75%;
+    padding-top: 8px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.price input[type=range] {
+    display: inline-block;
+}
+  
+.price, .region, .pass, .beginners, .sort {
+    height: 20px;
+    display: inline-block;
+    margin: 0 7px 10px 7px;
+}
+.region {
+    padding-top: -10px;
+}
+
+.filter select {
+    font-size: 90%;
+    text-align-last: center;
+    display: inline-block;
+    color: #fff;
+    padding: 3px;
+    box-sizing: border-box;
+    margin: 5px;
+    border-radius: 50px;
+    border-color:#0652DD;
+    background-color: #0652DD;
+}
+
+.filter input[type=checkbox] {
+    vertical-align: text-top;
+}
+
+.filter select option {
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .filter {
+        margin-top: 60px;
+        position: relative;
+        z-index: 5;
+    }
+}
+

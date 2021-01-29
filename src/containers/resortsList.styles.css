@@ -1,0 +1,16 @@
+  
+.resort-list{
+    margin-top: 90px;
+    width: 50%;
+    overflow-y: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+@media (max-width: 740px) {
+    .resortList{
+      margin-top: 20px;
+      width: 100%;
+  }
+}

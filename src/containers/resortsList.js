@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import ResortCard from "../components/resortCard"
 import {getResorts} from "../actions/resortActions"
 
+import './resortsList.styles.css'
 
 
 class ResortsList extends Component{
@@ -12,7 +13,7 @@ class ResortsList extends Component{
         
 
     return(
-            <div className="resortList">
+            <div className="resort-list">
                     {resorts}
             </div>
         )

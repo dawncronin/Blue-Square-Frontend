@@ -4,7 +4,7 @@ import InfoWindowEx from "../components/infoWindowEx"
 import { useHistory } from 'react-router-dom';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
-
+import './mapBox.styles.css'
 class MapBox extends Component {
   constructor() {
     super()
@@ -53,7 +53,7 @@ class MapBox extends Component {
     let slug =  this.state.selectedPlace.resort? this.state.selectedPlace.resort.attributes.name.split(" ").join("_") : ""
 
     return (
-      <div className="mapBox">
+      <div className="map-box">
         <Map google={this.props.google}   
         zoom={this.props.zoom} 
         style={{
@@ -80,14 +80,11 @@ class MapBox extends Component {
            marker={this.state.activeMarker}
            visible={this.state.showingInfoWindow}
            onClose={this.onClose}> 
-            <div>
+            <div className="map-info">
               <h4>{this.state.selectedPlace.title} 
-              <button onClick={() => {
-                window.location.href=`/resorts/${slug}`             
-              }}>View Resort</button>
               </h4> 
              {this.state.selectedPlace.resort? this.state.selectedPlace.resort.attributes.short_desc : ""}
-            
+             <a class="info-btn" href={`/resorts/${slug}`}> Learn More </a>            
              </div>
            </InfoWindowEx>
           
