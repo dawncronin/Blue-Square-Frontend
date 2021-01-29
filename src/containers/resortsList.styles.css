@@ -9,8 +9,11 @@
 
 
 @media (max-width: 740px) {
-    .resortList{
+    .resort-list{
       margin-top: 20px;
       width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
   }
 }

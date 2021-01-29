@@ -11,6 +11,10 @@ import AddReview from "../components/addReview"
 import ReviewList from "../containers/reviewList"
 import ResortBox from "../components/resortBox"
 
+import './resortPage.styles.css'
+
+
+
 class ResortPage extends Component {
     constructor() {
         super()
@@ -65,11 +69,11 @@ class ResortPage extends Component {
 
     render() {
 
-
         return (
-            <div className="resortPage">
-                <Navbar optionalClass="not-home-nav"/>
-
+            <div className="resort-page">
+                <Navbar optionalClass="not-home-nav"
+/>
+            
                 <div className="resortBoxCont" >
 
                {this.props.currentResort.resort? (<ResortBox 

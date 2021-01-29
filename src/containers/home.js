@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Navbar from '../components/navbar'
 
-import './home.style.css'
+import './home.styles.css'
 
 function Home() {
 

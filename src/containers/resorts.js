@@ -5,7 +5,7 @@ import MapBox from "../components/mapBox"
 import ResortsList from "../containers/resortsList"
 import Navbar from '../components/navbar'
 
-import './resorts.style.css'
+import './resorts.styles.css'
 
 class Resorts extends Component {
     constructor(props) {
