@@ -56,7 +56,7 @@ return (
                         </li>
                     </ul>
                 </div>
-                <div>
+                <div className="last-about-div">
                     <ion-icon name="star"></ion-icon>
                     <h5>Read and Write Reviews</h5>
                     <ul>
