@@ -1,4 +1,4 @@
-Front-end: https://github.com/dawncronin/Blue-Square-Backend
+Back-end: https://github.com/dawncronin/Blue-Square-Backend
 
 React/Redux App with Rails API
 App for browsing and saving ski resorts using google maps api
