@@ -1,0 +1,11 @@
+.review {
+    margin-bottom: 20px;
+}
+
+.review p {
+    padding: 4px 0;
+}
+
+.review-stars {
+    color: #0652DD;
+}

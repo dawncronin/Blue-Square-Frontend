@@ -44,8 +44,8 @@ class ResortPage extends Component {
            }
            this.setState({saved: saved})
         }
-        if (prevProps.reviews !== this.props.reviews) {
-            
+        if (prevProps.reviews !== this.props.reviews  && this.props.reviews !== undefined) {
+             console.log(prevProps.reviews, this.props.reviews)
             let ratings = this.props.reviews.map(review => review.attributes.rating)
 
             let rating = ratings.reduce((a, b) => a + b , 0)/ (ratings.length)
@@ -71,8 +71,7 @@ class ResortPage extends Component {
 
         return (
             <div className="resort-page">
-                <Navbar optionalClass="not-home-nav"
-/>
+                <Navbar optionalClass="not-home-nav"/>
             
                 <div className="resortBoxCont" >
 
@@ -89,13 +88,13 @@ class ResortPage extends Component {
                ) : ( "loading" ) }
                </div>
 
-              <div className="reviewSection">
-                  {this.props.loggedIn ? (
+              <div className="review-section">
+               <ReviewList/>
+               {this.props.loggedIn ? (
                                      <AddReview/>
                   ) : (
                       ""
                   )}
-               <ReviewList/>
                </div>
             </div>
 

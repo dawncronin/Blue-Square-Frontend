@@ -41,8 +41,8 @@ class Signup extends Component {
 
     render() {
         return (
-            <div className="signupPage">
-            <Navbar/>
+            <div className="signup-page">
+            <Navbar optionalClass="not-home-nav"/>
             <div className="signup">
                 <h2> Sign Up</h2>
                 {this.props.error ? <h3>Invalid Inputs, try again</h3> : null}

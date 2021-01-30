@@ -1,0 +1,42 @@
+.add-review {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.add-review h3 {
+    font-weight: 300;
+    font-size: 90%;
+}
+
+.add-review select {
+    font-size: 80%;
+    text-align-last: center;
+    display: inline-block;
+    color: #fff;
+    padding: 2px;
+    box-sizing: border-box;
+    margin: 5px 5px 5px 0px;
+    border-radius: 50px;
+    border-color:#0652DD;
+    background-color: #0652DD;
+}
+  
+.add-review input[type=submit] {
+    background-color: transparent;
+    border: 1px solid #0652DD;
+    border-radius: 50px;
+    padding: 3px 5px;
+    color: #0652DD;
+    transition: background-color 0.2s, color 0.2s;
+}
+  
+.add-review input[type=submit]:hover {
+    background-color: #0652DD;
+    color: white;
+}
+
+textarea {
+    width: 60%;
+    height: 60px;
+}

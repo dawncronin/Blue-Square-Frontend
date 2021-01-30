@@ -14,13 +14,13 @@ https://www.0to255.com/0652dd
   padding: 0;
   box-sizing: border-box;
 }
-html {
+html, body {
   font-family: 'Montserrat', sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0px;
   padding: 0px;
   /* overflow-x: hidden; */
-  /* height: 100%; */
+  height: 100%;
   /* padding-bottom: 150px; */
 }
 

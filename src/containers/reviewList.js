@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import Review from '../components/review'
 
+import './reviewList.styles.css'
 
 function ReviewList(props) {
 
@@ -14,15 +15,11 @@ function ReviewList(props) {
             return "loading..."
 
         }
-       
     }
 
-
-
     return (
-
-        <div className="reviewList"> 
-        <h3>Reviews </h3>
+        <div className="review-list"> 
+        <h2>Reviews </h2>
             {mappedReviews()}
         </div>
     )

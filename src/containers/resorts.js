@@ -16,7 +16,7 @@ class Resorts extends Component {
             rating: 1,
             region: "none",
             skipass: "none",
-            begineer: false,
+            beginner: false,
             sort: "none",
             centerLat: 39.8283,
             centerLong: -98.5795,
@@ -38,8 +38,8 @@ class Resorts extends Component {
         })
     }
 
-    onBegineerChecked = () => {
-        this.setState({begineer: !this.state.begineer}, () => {
+    onBeginnerChecked = () => {
+        this.setState({beginner: !this.state.beginner}, () => {
             this.addFilters()
         })
     }
@@ -59,8 +59,8 @@ class Resorts extends Component {
        if (epic) {
            resorts = resorts.filter( resort => resort.attributes.epic)
         }
-        if (this.state.begineer) {
-            resorts = resorts.filter( resort => resort.attributes.begineer)
+        if (this.state.beginner) {
+            resorts = resorts.filter( resort => resort.attributes.beginner)
         }
 
         let lats = resorts.map(resort => resort.attributes.lat)
@@ -178,7 +178,7 @@ class Resorts extends Component {
             < Navbar optionalClass="not-home-nav"/>
             <div className="resorts"> 
 
-            <Filter onFilterChange={this.onFilterChange} onBegineerChecked={this.onBegineerChecked} onSortChange={this.onSortChange}/>
+            <Filter onFilterChange={this.onFilterChange} onBeginnerChecked={this.onBeginnerChecked} onSortChange={this.onSortChange}/>
             <ResortsList filteredResorts={this.props.loadingResorts? [] : this.state.filteredResorts} 
             sort={this.state.sort}
             />

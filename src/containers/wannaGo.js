@@ -5,7 +5,7 @@ import SavedResortsList from "../containers/savedResortsList"
 import {getCurrentUser} from '../actions/userActions'
 import Navbar from '../components/navbar'
 
-
+import './wannaGo.styles.css'
 
 class WannaGo extends Component {
 
@@ -24,8 +24,8 @@ class WannaGo extends Component {
 
     render() {
         return (
-            <div className="wannaGo">
-                < Navbar />
+            <div className="wanna-go">
+                <Navbar optionalClass="not-home-nav"/>
             {this.props.resorts !== "nothing" ? (
                 <div>
                     <SavedResortsList filteredResorts={this.props.resorts || []}/>
@@ -34,7 +34,6 @@ class WannaGo extends Component {
             )}
             
                      <div className="footer"></div>
-
              </div>
         )
     }

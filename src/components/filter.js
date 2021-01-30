@@ -30,7 +30,7 @@ export default class Filter extends Component {
                      <br/> Daily Price:  Under ${this.state.price} 
                 </div>
                 <div className="beginners"> 
-                    Great For Beginners: <input type="checkbox" name="beginners" value={true} onChange={e => {this.props.onBegineerChecked()}}/> 
+                    Great For Beginners: <input type="checkbox" name="beginners" value={true} onChange={e => {this.props.onBeginnerChecked()}}/> 
                 </div>
 
                 <div className="region"> Region:

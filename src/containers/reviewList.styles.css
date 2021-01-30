@@ -1,0 +1,12 @@
+.review-list {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.review-list h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 300%;
+    font-weight: 100;
+}

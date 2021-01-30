@@ -3,6 +3,10 @@ import {connect} from 'react-redux'
 import {getSavedResorts} from "../actions/resortActions"
 import SavedResortsList from "../containers/savedResortsList"
 import {getCurrentUser} from '../actions/userActions'
+import Navbar from '../components/navbar'
+
+import './pastTrips.styles.css'
+
 
 
 class PastTrips extends Component{
@@ -23,7 +27,8 @@ class PastTrips extends Component{
 
     render() {
         return (
-            <div className="pastTrips">
+            <div className="past-trips">
+            <Navbar optionalClass="not-home-nav"/>
             {this.props.resorts !== "nothing" ? (
                 <div>
                     <SavedResortsList filteredResorts={this.props.resorts || []}/>
@@ -46,7 +51,9 @@ function mapDispatchToProps(dispatch){
    
 function mapStateToProps(state){
     return {currentUser: state.userReducer.currentUser,
-    resorts: state.resortsReducer.savedResorts}
+    resorts: state.resortsReducer.savedResorts,
+    saveType: state.resortsReducer.saveType
+}
 }
    
 export default connect(mapStateToProps, mapDispatchToProps)(PastTrips)

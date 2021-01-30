@@ -3,6 +3,8 @@ import {login} from '../actions/userActions'
 import {connect} from 'react-redux'
 import Navbar from './navbar'
 
+import './login.styles.css'
+
 
 class Login extends Component {
     constructor() {
@@ -39,7 +41,7 @@ class Login extends Component {
 
     render() {
     return (
-        <div className="loginPage">
+        <div className="login-page">
                   <Navbar optionalClass="not-home-nav"/>
         <div className="login">
             <br/>
