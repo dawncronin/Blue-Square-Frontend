@@ -1,0 +1,36 @@
+.about-page {
+    position: absolute;
+    width: 100%;
+}
+
+.about {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.about-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.about-row div {
+    margin: 15px;
+}
+
+.about-row ul {
+    list-style: none;
+    text-align: justify;
+    font-size: 80%;
+}
+
+.about-row li {
+    margin: 20px 5px;
+}
+
+footer {
+
+}

@@ -10,11 +10,11 @@ import Login from "./components/login"
 import {getCurrentUser} from "./actions/userActions"
 import {getResorts} from "./actions/resortActions"
 import {connect} from 'react-redux'
-import Navbar from './components/navbar'
 import Resorts from "./containers/resorts"
 import WannaGo from "./containers/wannaGo"
 import PastTrips from "./containers/pastTrips"
 import ResortPage from "./containers/resortPage"
+import About from "./components/about"
 
 
 class App extends Component {
@@ -37,6 +37,7 @@ render() {
     <Router>
     <div className="app">
       <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
       <Route exact path="/login"  component={Login}/>
       <Route exact path="/signup" component={Signup}/>
       <Route exact path="/resorts" render={routerProps => <Resorts {...routerProps.match}/>}/>

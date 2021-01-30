@@ -5,7 +5,6 @@ import terrain from "../img/snowboard.png"
 import mountain from "../img/mountain.svg"
 import runs from "../img/runs.svg"
 import lifts from "../img/lifts.png"
-import star from "../img/star.png"
 
 import './resortBox.styles.css'
 
