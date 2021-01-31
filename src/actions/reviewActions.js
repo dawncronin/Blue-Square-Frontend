@@ -1,6 +1,6 @@
-// const API_ROOT = `https://bluesquareapi.herokuapp.com/`;
+const API_ROOT = `https://bluesquareapi.herokuapp.com/`;
 
-const API_ROOT = `http://localhost:3000/`;
+// const API_ROOT = `http://localhost:3000/`;
 
 
 let token = localStorage.getItem("token")
