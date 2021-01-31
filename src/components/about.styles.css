@@ -48,6 +48,7 @@
 }
 
 .about-row li {
+    min-width: 100px;
     margin: 20px 5px;
 }
 

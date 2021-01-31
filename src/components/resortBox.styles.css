@@ -179,3 +179,28 @@
     border-radius: 5px;
     box-shadow: 2px 2px 3px rgb(173, 173, 173);
 }
+
+/* media queries */
+
+
+/* Small Phones from 0 - 480 */
+@media only screen and (max-width: 700px) {
+    .row1 {
+        margin-top: 50px;
+        display: block;
+        text-align: center;
+    }
+
+    .row2 {
+        width: 100%;
+    }
+
+    .desc-box{
+        width: 90%;
+        font-size: 80%;
+    }
+    .desc {
+        width: 90%;
+    }
+} 
+
