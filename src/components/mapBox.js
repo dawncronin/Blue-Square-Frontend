@@ -42,13 +42,6 @@ class MapBox extends Component {
     }
   };
 
-  visitResort = (event) => {
-    let history = useHistory()
-    let slug =  this.state.selectedPlace.resort.attributes.name.split(" ").join("_")
-    history.push(`/resorts/${slug}`)
-
-  }
-
   render() {
     let slug =  this.state.selectedPlace.resort? this.state.selectedPlace.resort.attributes.name.split(" ").join("_") : ""
 
