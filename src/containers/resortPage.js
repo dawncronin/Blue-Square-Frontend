@@ -45,7 +45,6 @@ class ResortPage extends Component {
            this.setState({saved: saved})
         }
         if (prevProps.reviews !== this.props.reviews  && this.props.reviews !== undefined) {
-             console.log(prevProps.reviews, this.props.reviews)
             let ratings = this.props.reviews.map(review => review.attributes.rating)
 
             let rating = ratings.reduce((a, b) => a + b , 0)/ (ratings.length)

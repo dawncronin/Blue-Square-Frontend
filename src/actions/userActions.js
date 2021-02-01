@@ -20,7 +20,6 @@ export function postUser(username, password, password_confirmation) { // Signup 
       }})})
       .then(response => response.json())
       .then(user => { 
-        console.log(user)
         if (!user.error) {
           localStorage.setItem('token', user.jwt );  //set token
           dispatch({ type: 'LOGIN', currentUser: user })

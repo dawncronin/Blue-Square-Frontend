@@ -10,7 +10,6 @@ import './wannaGo.styles.css'
 class WannaGo extends Component {
 
     componentWillMount() {
-        console.log(this.props)
         if (this.props.currentUser.id) {
             this.props.getSavedResorts(this.props.currentUser.id, "wannaGo")
         }

@@ -6,7 +6,6 @@ import './review.styles.css'
 function Review(props) {
 
     let stars = () => {
-        console.log(props.review.attributes.rating)
         if (props.review.attributes.rating === 1){
             return <div className="star"> 
                 <ion-icon name="star"></ion-icon>

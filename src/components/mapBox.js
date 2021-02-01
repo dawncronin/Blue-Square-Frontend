@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-// import googleMapsKey from "../secrets.js"
 import InfoWindowEx from "../components/infoWindowEx"
-import { useHistory } from 'react-router-dom';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
 import './mapBox.styles.css'
@@ -18,9 +16,8 @@ class MapBox extends Component {
   }
 
   markers = () => {
-
     return this.props.filteredResorts.map(resort => {
-      return <Marker position={{lat: resort.attributes.lat, lng: resort.attributes.long}}
+      return <Marker key={resort.id} position={{lat: resort.attributes.lat, lng: resort.attributes.long}}
       clickable={true} resort={resort} title={resort.attributes.name} onClick={this.onMarkerClick}
     />  
   })}
@@ -77,7 +74,7 @@ class MapBox extends Component {
               <h4>{this.state.selectedPlace.title} 
               </h4> 
              {this.state.selectedPlace.resort? this.state.selectedPlace.resort.attributes.short_desc : ""}
-             <a class="info-btn" href={`/resorts/${slug}`}> Learn More </a>            
+             <a className="info-btn" href={`/resorts/${slug}`}> Learn More </a>            
              </div>
            </InfoWindowEx>
           

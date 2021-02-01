@@ -24,11 +24,7 @@ class Resorts extends Component {
         }
     }
 
-    componentDidUpdate() {
-        console.log(this.state)
-    }
-
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         this.setState({filteredResorts: props.resorts})
     }
 
@@ -78,8 +74,6 @@ class Resorts extends Component {
         if (centerLat && centerLong) {
             let difLat = (maxLat - minLat)
             let difLong = (maxLong - minLong)
-
-            console.log(difLong, difLat)
 
             if ( difLong > 40) {
                 zoom = 4
@@ -165,7 +159,10 @@ class Resorts extends Component {
             case "terrain_parks" : {
                 sorted = array.sort((a, b) => b.attributes.terrain_parks - a.attributes.terrain_parks )
                 break
-            } 
+            }
+            default : {
+                return array
+            }
         }
         this.setState({filteredResorts: sorted,
         sort: value})

@@ -47,6 +47,9 @@ function ResortCard(props) {
             case "none" : {
                 return ""
             }
+            default : {
+                return ""
+            }
         }
     }
 
@@ -92,10 +95,11 @@ function ResortCard(props) {
             case "none" : {
                 return ""
             }
+            default : {
+                return ""
+            }
         }
     }
-
-    console.log(props.sort)
 
     return (
         <NavLink to={`/resorts/${slug}`}>

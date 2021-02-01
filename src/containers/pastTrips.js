@@ -12,7 +12,6 @@ import './pastTrips.styles.css'
 class PastTrips extends Component{
 
     componentWillMount() {
-        console.log(this.props)
         if (this.props.currentUser.id) {
             this.props.getSavedResorts(this.props.currentUser.id, "pastTrip")
         }

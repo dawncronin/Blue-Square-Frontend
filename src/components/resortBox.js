@@ -106,13 +106,13 @@ function ResortBox(props) {
 
         <div className="resort-box">
         
-        <div class="row1">
+        <div className="row1">
             <div className="resort-title-box">
-                <h1 class="resort-box-title">{props.resort.attributes.name}  </h1>
+                <h1 className="resort-box-title">{props.resort.attributes.name}  </h1>
                 <div> {stars()} </div>
                 <div className="resortImageText">
                     <p> <ion-icon name="location-outline"></ion-icon>{props.resort.attributes.state}, {props.resort.attributes.region} </p>
-                    <div><a target="_blank" href={props.resort.attributes.link}> Visit Website </a> </div>
+                    <div><a target="_blank" rel="noreferrer" href={props.resort.attributes.link}> Visit Website </a> </div>
                 </div>
             </div>
             <div className="resort-image-box"> 
@@ -121,7 +121,7 @@ function ResortBox(props) {
 
         </div>
 
-        <div class="row2">
+        <div className="row2">
             <div className="desc-box">
                 <p className="desc">{props.resort.attributes.long_desc}</p>
                 <div className="save-resort">
