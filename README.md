@@ -51,3 +51,8 @@ In order to save time with sending data to the frontend, I've implemented the ge
  
 ## Screen Shots:
 
+![Homepage](https://user-images.githubusercontent.com/12172077/106529372-35325200-649f-11eb-8496-07ac45d28a87.PNG)
+![Resorts Page](https://user-images.githubusercontent.com/12172077/106529381-38c5d900-649f-11eb-9966-3be25b2f7915.PNG)
+![Resort Page 1](https://user-images.githubusercontent.com/12172077/106529374-36637f00-649f-11eb-8044-6e48c0491aa7.PNG)
+![Resort Page 2](https://user-images.githubusercontent.com/12172077/106529377-382d4280-649f-11eb-8a7f-9c09ea51a644.PNG)
+![About Page](https://user-images.githubusercontent.com/12172077/106529371-3499bb80-649f-11eb-8c58-fc7dab4fd6f7.PNG)
