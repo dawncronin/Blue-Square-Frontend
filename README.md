@@ -29,7 +29,7 @@ For development, I used redux-thunk to display the redux-devtools-extension.
 
 ## Back-end
  
-The back-end was created with a boiler-plate rails application with a postgres database. The backend provides an API for the front end with information about users, resorts, and reviews. IT also handles user authorization, and serialized responses.
+The back-end was created with a boiler-plate rails application with a postgres database. The backend provides an API for the front end with information about users, resorts, and reviews. It also handles user authorization, and serialized responses.
  
 Back-end: https://github.com/dawncronin/Blue-Square-Backend
  
