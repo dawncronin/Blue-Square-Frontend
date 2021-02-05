@@ -14,7 +14,6 @@ class SavedResortsList extends Component{
     return(
             <div className="saved-resort-list">
                 {resorts}
-
             </div>
         )
     }

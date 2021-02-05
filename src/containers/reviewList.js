@@ -8,6 +8,9 @@ function ReviewList(props) {
 
     let mappedReviews = () => {
         if (!props.loading && props.reviews) {
+            if (props.reviews.length === 0) {
+                return <h4 className="no-reviews"> Be the first to write a review</h4>
+            }
             return props.reviews.map(review => {
                 return <Review review={review} key={review.id}/>
         })}

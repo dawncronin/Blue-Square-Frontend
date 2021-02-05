@@ -5,3 +5,11 @@
     position: absolute;
 
 }
+
+.no-saved-resorts {
+    position: relative;
+    top: 100px;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 200;
+}

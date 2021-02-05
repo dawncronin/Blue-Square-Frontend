@@ -3,6 +3,7 @@ import {postReview} from '../actions/reviewActions'
 import {connect} from 'react-redux'
 
 import './addReview.styles.css'
+
 class AddReview extends Component {
     constructor() {
         super();

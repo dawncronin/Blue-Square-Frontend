@@ -56,11 +56,29 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 452px) {
 
-  .not-home-nav {
-    height: auto;
+  .logo {
+    margin-top: 20px;
+    font-size: 120%;
   }
+
+  .nav-bar ul li {
+    margin: 25px 5px;
+  }
+  
+}
+
+@media (max-width: 348px) {
+
+ .nav-bar {
+    font-size: 60%;
+  }
+  .logo {
+    margin-top: 22px;
+    font-size: 110%;
+  }
+
   
 }
 

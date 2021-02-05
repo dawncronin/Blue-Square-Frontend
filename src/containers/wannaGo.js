@@ -29,7 +29,7 @@ class WannaGo extends Component {
                 <div>
                     <SavedResortsList filteredResorts={this.props.resorts || []}/>
             </div> ) : (
-                <div className="noSavedResorts"> No Resorts Saved!</div>
+                <h2 className="no-saved-resorts"> No Resorts Saved!</h2>
             )}
             
                      <div className="footer"></div>

@@ -1,7 +1,7 @@
 
 .resort-box {
     position: relative;
-    top: 60px;
+    top: 30px;
     width: 100%;
 }
   
@@ -202,5 +202,14 @@
     .desc {
         width: 90%;
     }
+
+    .resort-image-box {
+        margin: 10px 5px 10px 5px;
+    }
+
+    .resort-title-box {
+        margin: 10px 5px 10px 5px;
+    }
+
 } 
 
