@@ -15,7 +15,7 @@ export function postUser(username, password, password_confirmation) { // Signup 
     dispatch({ type: 'LOADING_USER' }); //awaiting the fetch
     fetch(`${API_ROOT}users`, {
       method: "POST",
-      headers: headers,
+      headers,
       body: JSON.stringify({ user: {username: username, password: password, password_confirmation: password_confirmation
       }})})
       .then(response => response.json())

@@ -29,6 +29,7 @@ class ResortPage extends Component {
     componentDidMount() {
         this.props.getResort(this.props.match.params.resortName)
         this.props.getReviews(this.props.match.params.resortName)
+        window.scrollTo(0, 0)
     }
 
     onSelection = (event) => {

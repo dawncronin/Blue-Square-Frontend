@@ -1,7 +1,7 @@
 
 .resort-box {
     position: relative;
-    top: 30px;
+    top: 60px;
     width: 100%;
 }
   
@@ -186,7 +186,7 @@
 /* Small Phones from 0 - 480 */
 @media only screen and (max-width: 700px) {
     .row1 {
-        margin-top: 50px;
+        /* margin-top: 50px; */
         display: block;
         text-align: center;
     }
